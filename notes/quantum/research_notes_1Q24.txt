@@ -1,0 +1,29 @@
+
+-- So it begins...  --
+
+After some months, perhaps more than a year, we've been tracking the quantum computing space with increasing interest.  Prior to that it was the stuff of science fiction, more recently more akin to cold fusion - we'll believe it when we see it, maybe someday in the far distant future it will be useful for something.
+
+Quantum is clearly still in its infancy.  I had dinner with a PhD physicist at SC23 and he admitted the best medium-term application of quantum computing is to model quantum systems.  Because otherwise, if there are applications of interest besides cryptography, we don't know about them as most people have no idea how to program these things.  
+
+And on first blush, they are entirely foreign.  Not like OO was to procedural.  A real mind f***.  We can sit in 10 hours of online tutorials on quantum and still never write "hello world", add two numbers.  
+
+To compound matters, the base physics which is used to build these non-von Neumann machines varies.  For example, Xanadu.ai funds and supports two open source libraries, depending on the underlying physics of the machine.  Some are gate-based, some are not.
+
+Walled gardens are already springing up in this greenfield.  Most notably NVIDIA.  While cuQuantum promises to bring performant quantum simulation to enterprise NVIDIA customers, those unable to buy a DGX are shut out (or sent to the cloud).  And while NVIDIA promotes heterogeneous architectures (e.g. Grace Hopper), they seem primarily concerned with heterogeneity in the context of their own product line.  Heterogeneous systems will likely be the norm in the quantum space - CPUs, GPUs, QPUs, and so on.  Within these classes of chips, we have chiplets.  Clearly the enterprise must be concerned with managing heterogeneity in their codebase which often contains critical IP.  
+
+The choice of language itself must be made, again, as it was with HPC and GPUs.  Here Python does seem to have an early lead over C++, but there are lower assembly standards, and given the variation in the hardware physics, standards which can still take 100% most performant use of the hardware will likely take a while to emerge, and until then arguments with those who put performance first will be necessary.
+
+Enterprises should prepare for an unmaintainable debris field from their scientific and engineering programmers in both the LLM and quantum spaces, and given its more maturity and alignment with current software practices, the debris field in LLM extends and blooms for business apps too (apps, and models, including personal ones... an operational nightmare for teams not ready to deal).
+
+As in GPUs with CUDA and more portable abstractions like SYCL, IBM, ironically to the senior staff, leads the way in support of open standards.  Qiskit is the top platform for quantum today in terms of installed base, and it promises to support hardware other than just IBM's.  We also see frameworks putting Qiskit under the hood, supporting a "driver for Qiskit".
+
+Qiskit quantum simulations can run on commodity hardware up to a small number of qubits, but enough to get started.  We're also interested in PennyLane supported by Xanadu, but it does more than just support programming gates, and we're not prepared to take on that.  
+
+Hardware, and support in simulators, will limit what can be done.  For example, not only are total qubits limited to maybe a dozen or two, in many cases 3-qubit gates are not yet supported by the simulators.
+
+So for the moment we'll play with Qiskit and see what happens, then perhaps try the similar-to with PennyLane and gates, and then get into the stuffier stuff, and some of the potential applications.
+
+
+
+
+

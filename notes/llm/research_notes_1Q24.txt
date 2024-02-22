@@ -167,6 +167,21 @@ In a modality where the model is assisting in standard work, it might be clear t
 CoT also seems to be more about the human's ability to do task deconstruction.  Outside of certain professional disciplines (e.g. software engineering) that skill might be lacking in the user.  Can the model be used to help deconstruct the end goal into sub-goals?  See the wf_cot_1Q24.txt for an example dialog.
 
 
+-- Code modification --
+
+Another interesting angle... if standard work is embodied in a function and labeled as a verb, and workflows are constructed of these functions plus generalized workflow terms, one could then see an entire workflow as a piece of standard work.  Parameters to the workflow (itself a function) thought might not be enough to support the desired variations.  Code modification by LLM prompt might be the avenue, and given a piece of tested standard work, the delta might be manageable and thus the error controllable.  To be explored, i.e. what is the granularity of standard work, and in what ways is standard work modified?
+
+
+-- Overselling --
+
+I'm becoming increasingly concerned we're overselling this AI.  Sprinkle a little AI on it.  What is "AI" anyway but a label for a class of programs we generally don't understand, a pattern matching black box.  When a set of such pattern matcher and predictor programs are combined, the results can be astounding, but intelligent?
+
+We see often that model products are being brought to market by the major players which are buggy.  When is the high profile hallucination which will put the brakes on investment?  Is there another AI Winter coming thanks again to the marketeers?
+
+I opine above about the poor documentation and examples - I encounter this problem regularly.  There is a dev on the team - he was asked to take a piece of code written for GPT-3.5 and make it work vs. GPT-4.0.  Two weeks later (!!!) he's not done.  The OpenAI API changed between 3.5 and 4.0, though that doesn't explain the entirety of the delay, though I can personally attest to issues modifying 3.5 code to work vs. 4.0.  It really shouldn't be this hard - however - it means the industry is new (it is) and thus the abstraction over a more slowly moving technology is not yet in scope.
+
+
+
 
 
 

@@ -24,6 +24,30 @@ Hardware, and support in simulators, will limit what can be done.  For example, 
 So for the moment we'll play with Qiskit and see what happens, then perhaps try the similar-to with PennyLane and gates, and then get into the stuffier stuff, and some of the potential applications.
 
 
+-- Qiskit -- 
+
+Quantum seems to be in a similar situation as the LLMs... the documentation stinks, examples don't work, etc.  After a few googles, RTFMs, and various failed attempted, I did get a basic null circuit working on the IBM simulator.  A login is required on the IBM site, even if the local simulator is used (not too cool).  In theory every new user gets some IBM cloud credits, so we should be able to run the example up there too, but we'll wait for now.  
+
+On run of a working circuit, we see this:
+
+(qiskit) {develop} ~/src/research-notes/src/qiskit $ python hello_world_1.py 
+/home/agallojr/src/research-notes/src/qiskit/hello_world_1.py:14: DeprecationWarning: Circuits that do not match the target hardware definition will no longer be supported after March 1, 2024. See the transpilation documentation (https://docs.quantum.ibm.com/transpile) for instructions to transform circuits and the primitive examples (https://docs.quantum.ibm.com/run/primitives-examples) to see this coupled with operator transformations.
+  job = Sampler(backend).run(qc)
+job id: cnbps1nmo951g805let0
+SamplerResult(quasi_dists=[{0: 1.0}], metadata=[{'shots': 4000, 'circuit_metadata': {}}])
+
+That's like a week from now.  The complaint seems to be with this:
+
+    job = Sampler(backend).run(qc)
+
+We'll look into the evolving signatures and try to stay with the tip.
+
+
+-- Alternative simulators -- 
+
+Aer is a simulator, similar to the IBM QASM.  The latter requires an IBM login, the former does not (though it seems to create a null IBM config file anyway).  Aer package itself contains more than one simulator.  We'll have to look into the differences at some point.
+
+Transpiling can be used to target the circuit on a specific simulator, pre-chew it for performance.  Not surprising, GPU support on Windows Linux (WSL) is not supported at least with my commodity GPU.
 
 
 

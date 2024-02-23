@@ -181,6 +181,11 @@ We see often that model products are being brought to market by the major player
 I opine above about the poor documentation and examples - I encounter this problem regularly.  There is a dev on the team - he was asked to take a piece of code written for GPT-3.5 and make it work vs. GPT-4.0.  Two weeks later (!!!) he's not done.  The OpenAI API changed between 3.5 and 4.0, though that doesn't explain the entirety of the delay, though I can personally attest to issues modifying 3.5 code to work vs. 4.0.  It really shouldn't be this hard - however - it means the industry is new (it is) and thus the abstraction over a more slowly moving technology is not yet in scope.
 
 
+-- Corner markets --
+
+I notice when writing on the subject of LLMs, workflows, and the like, the LLM assistant is right there with me.  Terms like jobs, data, sites, status, etc. are well known.  However, when I switch to a topic like quantum computing, suddenly the assistant is less helpful.  
+
+
 
 
 

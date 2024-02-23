@@ -3,7 +3,7 @@ from qiskit_aer import AerSimulator
 
 print("making circuit")
 # Generate 3-qubit GHZ state
-circ = QuantumCircuit(12)
+circ = QuantumCircuit(2)
 circ.h(0)
 circ.cx(0, 1)
 circ.cx(1, 2)

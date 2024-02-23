@@ -43,11 +43,18 @@ That's like a week from now.  The complaint seems to be with this:
 We'll look into the evolving signatures and try to stay with the tip.
 
 
--- Alternative simulators -- 
+-- Alternative simulators, alternate SDKs -- 
 
-Aer is a simulator, similar to the IBM QASM.  The latter requires an IBM login, the former does not (though it seems to create a null IBM config file anyway).  Aer package itself contains more than one simulator.  We'll have to look into the differences at some point.
+Aer is a simulator, similar to the IBM QASM.  The latter requires an IBM login, the former does not (though it seems to create a null IBM config file anyway? cuz Qiskit?).  Aer package itself contains more than one simulator, for different noise profiles, etc.  We'll have to look into the differences at some point.
 
 Transpiling can be used to target the circuit on a specific simulator, pre-chew it for performance.  Not surprising, GPU support on Windows Linux (WSL) is not supported at least with my commodity GPU.
+
+PennyLane is a competitor to Qiskit, and supports a plugin for Qiskit, thus permitting one to use PennyLane vs. IBM simulators and hardware.  The Canadian government has just given Xanadu a cash influx to aid in dissemination and adoption of the technology.  This is based in southern Ontario.  Upfront they claim the goal is to democratize.  First contact with their installation instructions was a good experience, examples worked relatively painlessly.
+
+
+-- Problem morphing --
+
+Taking a problem and morphing it into a circuit is a problem.  It reminds of proving a problem is NP Complete.  (Insert horror story from grad school algorithms class here.)  In theory, given LLM planning abilities, an LLM should be helpful in problem transformation.  Also, in gate based quantum models, the set of verbs is small, thus the potential for a coding assistant which implements the transformed problem seems plausible.  We will look into that.
 
 
 

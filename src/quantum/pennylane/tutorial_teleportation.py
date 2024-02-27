@@ -293,15 +293,8 @@ def measure_and_update():
 # protocol. Let's put it all together!
 
 
-def teleport(state):
-    state_preparation(state)
-    entangle_qubits()
-    basis_rotation()
-    measure_and_update()
-
-
 state = np.array([1 / np.sqrt(2) + 0.3j, 0.4 - 0.5j])
-_ = qml.draw_mpl(teleport, style="pennylane")(state)
+# _ = qml.draw_mpl(teleport, style="pennylane")(state)
 
 ##############################################################################
 #
@@ -316,7 +309,7 @@ _ = qml.draw_mpl(teleport, style="pennylane")(state)
 # specify ``expansion_strategy="device"`` when calling ``draw_mpl`` so it
 # runs the device pre-processing before drawing the circuit.
 
-dev = qml.device("default.qubit", wires=["S", "A", "B"])
+dev = qml.device("default.qubit", wires=["S", "A", "B"], shots=None)
 
 
 @qml.qnode(dev)
@@ -328,7 +321,7 @@ def teleport(state):
     return qml.density_matrix(wires=["B"])
 
 
-_ = qml.draw_mpl(teleport, style="pennylane", expansion_strategy="device")(state)
+# _ = qml.draw_mpl(teleport, style="pennylane", expansion_strategy="device")(state)
 
 ##############################################################################
 #
@@ -379,8 +372,9 @@ def teleport_state(state):
             f"Alice's state ({state}) not teleported properly. "
             f"Final density matrix of Bob's subsystem: {teleported_density_matrix}"
         )
+    print(f"Original density matrix of Alice's subsystem:\n {original_density_matrix}")
+    print(f"Final density matrix of Bob's subsystem:\n {teleported_density_matrix}")
     print("State successfully teleported!")
-
 
 teleport_state(state)
 

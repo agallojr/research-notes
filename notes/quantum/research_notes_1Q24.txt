@@ -51,12 +51,18 @@ Transpiling can be used to target the circuit on a specific simulator, pre-chew 
 
 PennyLane is a competitor to Qiskit, and supports a plugin for Qiskit, thus permitting one to use PennyLane vs. IBM simulators and hardware.  Config files are used to specify the hardware device.  Qiskit code can be imported wholely and used with PennyLane-managed devices and gradient algorithms.  Compilation of circuits for specific platforms with Catalyst is also possible.
 
-The Canadian government has just given parent firm Xanadu a cash influx to aid in dissemination and adoption of the technology.  This is based in southern Ontario.  Upfront they claim the goal is to democratize.  First contact with their installation instructions was a good experience, examples worked relatively painlessly.
+The Canadian government has just given parent firm Xanadu a cash influx to aid in dissemination and adoption of the technology.  This is based in southern Ontario.  (D-Wave is also based in Canada.) Upfront Xanadu claims the goal is to democratize.  First contact with their installation instructions was a good experience, examples worked relatively painlessly.
 
 
--- Problem morphing --
+-- Problem morphing into quantum forms --
 
 Taking a problem and morphing it into a circuit is a problem.  It reminds of proving a problem is NP Complete.  (Insert horror story from grad school algorithms class here.)  In theory, given LLM planning abilities, an LLM should be helpful in problem transformation.  Also, in gate based quantum models, the set of verbs is small, thus the potential for a coding assistant which implements the transformed problem seems plausible.  We will look into that.
+
+But circuits are not the only computing paradigm (pulse photon, quantum neuromorphic, adiabatic / annealing, etc.) and the algorithms are sensitive to or even dependent upon the underlying physics.  e.g. a brain-inspired universal quantum perceptron is emergent, as yet to be agreeably specified.  QASM is a good place to start, but will also likely come under pressure from the variation in emerging hardware.  Much work is being done with the researcher only running on a simulator, as the real machine isn't yet realized, simply to better understand the range of the possible (e.g. divide and conquer as applied to quantum algorithms).  There's even some back-and-forth such as using quantum computing to understand quantum state physics, and using quantum state physics to understand quantum computing.
+
+
+
+
 
 
 

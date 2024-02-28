@@ -27,7 +27,7 @@ XX = Pauli('XX')
 XI = Pauli('XI')
 IX = Pauli('IX')
 
-service = QiskitRuntimeService(channel="ibm_quantum", token="a7f54449d63c82d5948dcffef5bd8507074e534cb212ca2503aa0b089066e943b000fc77aa0db7ff86ed731335e8e94be1126ca60dca55cf3a7e38167fb37f3c")
+service = QiskitRuntimeService(channel="ibm_quantum", token="<token>")
 backend = service.get_backend("ibmq_qasm_simulator")
 pm = generate_preset_pass_manager(backend=backend)
 isa_circuit = pm.run(qc)

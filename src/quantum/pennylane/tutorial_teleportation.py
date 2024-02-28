@@ -294,7 +294,7 @@ def measure_and_update():
 
 
 state = np.array([1 / np.sqrt(2) + 0.3j, 0.4 - 0.5j])
-# _ = qml.draw_mpl(teleport, style="pennylane")(state)
+# _ = qml.draw(teleport, style="pennylane")(state)
 
 ##############################################################################
 #
@@ -320,8 +320,8 @@ def teleport(state):
     measure_and_update()
     return qml.density_matrix(wires=["B"])
 
-
-# _ = qml.draw_mpl(teleport, style="pennylane", expansion_strategy="device")(state)
+print("the circuit:")
+print(qml.draw(teleport, expansion_strategy="device")(state))
 
 ##############################################################################
 #

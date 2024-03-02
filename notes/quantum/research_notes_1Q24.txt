@@ -53,6 +53,10 @@ PennyLane is a competitor to Qiskit, and supports a plugin for Qiskit, thus perm
 
 The Canadian government has just given parent firm Xanadu a cash influx to aid in dissemination and adoption of the technology.  This is based in southern Ontario.  (D-Wave is also based in Canada.) Upfront Xanadu claims the goal is to democratize.  First contact with their installation instructions was a good experience, examples worked relatively painlessly.
 
+We've now written a basic circuit and using PennyLane we've run it on a variety of simulators and real machines at AWS and IBM.  And it was remarkably easy.  Tho we notice that in both cloud cases the local Python process idled while the remote process was in queue and then running.  Clearly there needs to be / is some kind of batch submission idiom to investigate.  Its also remarkable (of course) that the cloud providers match our lwfm model of sites and compute types.
+
+Also clearly we need to know more about leveraging a quantum step in a broader "hybrid" computation or workflow.  
+
 
 -- Problem morphing into quantum forms --
 

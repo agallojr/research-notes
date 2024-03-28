@@ -1,0 +1,39 @@
+
+-- LLM redux -- 
+
+A renewed interest in LLM solutions for enabling enterprise developers at varieties of skill levels but especially novice.
+
+We note the Feb 24 CACM article on the benefits of code assistant adoption.  Other studies have shown that novice coders - such as 101 students - benefit the most, are able to complete tasks faster, and have time (slack) needed to reinvest in tighter software engineering practices such as the encoding of test cases.
+
+We're interested in reference architectures for enterprise systems, including all basic and latent SecDevOps concerns.  See here: 
+    https://github.com/a16z-infra/llm-app-stack
+    https://arxiv.org/pdf/2402.01411.pdf 
+
+Such architectures need to be flexible as the state of the art is hardly static.  We should expect to not be in the end state, for foundational technologies to change, perhaps significantly.  Architectures should help with that insulation.  Processes may have manual steps at first, with those steps being increasing automated over time, either as the models learn, or as the base technology from the industry at large improves.  
+
+We will notice that an AI assistant can be employed at many phases of the software lifecycle, regardless if the human realizes there are phases at all.  The total end-to-end solution will likely be multi-modal (until there is perhaps one to rule them all).  Models should inform each other.  They should be customized, per org, per person perhaps.  They should reflect organizational and industrial values and best practices.  Some phases themselves may be multi-modal, using ensembles, etc.  There should be feedback to help shed light on the efficacy of the models used.
+
+From a user's perspective, a few things might want to be true:
+    - the user is able to use the tools, i.e. the enterprise has figured out how to protect the IP, perhaps by in-enterprise tool deployments
+    - the tools are able to be updated, nearly continuously as the technology is rapidly evolving
+    - the tools need to be customizable, for specific orgs, projects, persons, etc, and yet still be generally updatable
+    - beyond feel good qualitative assessments (important this early phase) there can be more quantitative assessments of productivity, and especially quality (measured by downstream defects, rework, etc.)  
+        https://www.martinfowler.com/articles/measuring-developer-productivity-humans.html
+    - measurements want to focus on the process, not the user  
+    - the user wants to assume any prior successful interactions will continue to inform the future behavior of the model, even as the model component evolves
+
+From the enterprise p.o.v., besides the obvious protection of IP, and assuming we are not (yet) removing the human from the loop in any compliance or regulatory processes, the enterprise would like:
+    - the tools are "under management", versions known and controlled, etc.
+    - the tools are customizable for the needs of different user groups
+    - the architecture and tool chain are not rigid, rather flexible to handle the needs of new technologies, use cases, etc.
+    - qualitative metrics are nice, but MBA types will prefer quantitative eventually if not sooner 
+    - all the data which goes into training models, including the user's interactive data which can be used to tune in realtime, should be tracked by the enterprise, decorated with metadata, FAIR, etc.  
+
+Where can an enterprise make use of AI assist software development?
+    - traditional software development (of course)
+    - domain-specific niche development - e.g. workflows for standard engineering / business process / ops work; niche tech like CUDA
+
+e.g. ops : https://www.ibm.com/architectures/hybrid/genai-code-generation-ansible 
+
+Starting from some previously well-known "standard work" conducted by user populations who are hearty to this technology (e.g. an ops team), and having gained experience, the set of standard work items can be broadened and deepened, the set of users increased by the lowering of barriers / democratization.
+

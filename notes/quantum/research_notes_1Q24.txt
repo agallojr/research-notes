@@ -55,7 +55,11 @@ The Canadian government has just given parent firm Xanadu a cash influx to aid i
 
 We've now written a basic circuit and using PennyLane we've run it on a variety of simulators and real machines at AWS and IBM.  And it was remarkably easy.  Tho we notice that in both cloud cases the local Python process idled while the remote process was in queue and then running.  Clearly there needs to be / is some kind of batch submission idiom to investigate.  Its also remarkable (of course) that the cloud providers match our lwfm model of sites and compute types.
 
-Also clearly we need to know more about leveraging a quantum step in a broader "hybrid" computation or workflow.  
+Also, while we'd like to run the same circuit on NVIDIA hardware, there's a high bar (https://nvidia.github.io/cuda-quantum/latest/install.html#dependencies-and-compatibility).  If the hardware does not support the necessary version of CUDA, the simulator will revert to the non-GPU version.  There is a cloud for NVIDIA, but there's a salesman contact sheet... no go for me.  AWS and IBM were self-service sign-ups. 
+
+Also clearly we need to know more about leveraging a quantum step in a broader "hybrid" computation or workflow.  It would seem that type 1 workflows are the only real area of interest, as type 2 and 3 involve distances and delay not within normal "HPC" expectation, and are thus no different than any other app running on any compute site.
+
+We'll look at PennyLane and MPI support.
 
 
 -- Problem morphing into quantum forms --
@@ -63,6 +67,43 @@ Also clearly we need to know more about leveraging a quantum step in a broader "
 Taking a problem and morphing it into a circuit is a problem.  It reminds of proving a problem is NP Complete.  (Insert horror story from grad school algorithms class here.)  In theory, given LLM planning abilities, an LLM should be helpful in problem transformation.  Also, in gate based quantum models, the set of verbs is small, thus the potential for a coding assistant which implements the transformed problem seems plausible.  We will look into that.
 
 But circuits are not the only computing paradigm (pulse photon, quantum neuromorphic, adiabatic / annealing, etc.) and the algorithms are sensitive to or even dependent upon the underlying physics.  e.g. a brain-inspired universal quantum perceptron is emergent, as yet to be agreeably specified.  QASM is a good place to start, but will also likely come under pressure from the variation in emerging hardware.  Much work is being done with the researcher only running on a simulator, as the real machine isn't yet realized, simply to better understand the range of the possible (e.g. divide and conquer as applied to quantum algorithms).  There's even some back-and-forth such as using quantum computing to understand quantum state physics, and using quantum state physics to understand quantum computing.
+
+
+-- GPU scarcity -- 
+
+Its real.  AWS is stingy on giving out quota.  Took three rounds with AWS tech support and then I got 1 node when I asked for 3.  While waiting, I tried getting a node from Google, and they had none in numerous US and CA data centers I tried.  Bitcoin must be up...  
+
+Spent several days trying to get the PennyLane GPU install with CUDA and MPI working on an AWS machine with a V100 GPU.  Only the NVIDIA PennyLane simulator incorporates MPI.  And I come to find out from the PennyLane user group that the cuQuantum implementation on which it depends has a 2 GPU per node minimum.  This would mean going back to AWS and asking for more quota.  
+
+The home company has machines with at least one GPU of the proper kind.  I'm not sure it has nodes with two GPUs - it can be an inquiry down the road.  
+
+Suffice it to say that there exists an MPI-aware simulator for PennyLane (and for cuQuantum for that matter) but it has a high bar for installation.  We will defer this inquiry for now.
+
+The interchange with the PennyLane tech support is here:
+
+        Hey <@698521488508321895> , glad to hear you are enjoying the software. The MPI backend for lightning.gpu is mainly built for HPC-system installs (we use it regularly on Perlmutter, amongst other systems), and so it has some quirks to ensure the MPI env is correctly supported. We do have CI testing using both MPICH and OpenMPI , which if the instructions aren't working for you, the steps listed here may help reproducing a working env ( see here and below for the Python test-env setup https://github.com/PennyLaneAI/pennylane-lightning/blob/bb9b1443efd6e3f4e6be0865303f92b4a1c733f9/.github/workflows/tests_linux_x86_mpi_gpu.yml#L238). In this case, we are also limited by the MPI support offered by cuQuantum, namely it requires at least 2 GPUs per node, and only a power-of-2 for global MPI ranks.
+
+        As to why we do not have MPI on other devices, the main reason for us is prioritization --- we focus on adding features that are on our roadmap. As of right now, we do not have MPI support for lightning.qubit or lightning.kokkos in the coming months, but that isn't to say it won't be prioritized at some point, given enough request or needs.
+
+        If you are interested, you can build such an env using a HPC-system provided toolchain like follows (these instructions work on Perlmutter for example):
+        https://discuss.pennylane.ai/t/pennylane-multi-gpu-script-fails-with-error-even-there-are-enough-gpus/3978/10?u=mlxd
+
+
+-- NVIDIA AI Woodstock -- 
+
+Followed by the AI Altamont... please people.
+
+NVIDIA claims interoperability with all the major quantum hardware makers, a heterogeneous ecosystem, cloud hosting, etc.
+
+I finally did get sufficient quota from AWS to get a host with GPUs needed for the PennyLane GPU install with MPI with depends on CUDA, but I struggled as usual with the evil dependencies between CUDA and MPI.  I tried installing a GPU accelerated version of cuQuantum on the laptop, but that had similar issues.  I was able to get a non-GPU accelerated version of cuQuantum running on the laptop, but big deal - I'd rather use PennyLane and their CUDA device driver.
+
+Perhaps a Docker image will be useful.  I did try and use the one provided by NVIDIA for AWS - its 11 months old, and is built on an older version, and one not supported by the newest quantum tools.  Trying to install an update into the container was a fail.
+
+Note: if you go to the NVIDIA linked location for their presumably supported Docker container outside of AWS, it too is the older version.  In other words, the documentation is a joke, the tools are old, the installation is obnoxious, and its a walled garden.  (see: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda-quantum)
+
+Our research team will of course align with the IT team and provide servers, so I fully expect at the end of the day NVIDIA will be used by the business researchers, but I will continue to use PennyLane for my own learning.  Its portable, it does the differentiation (which I still don't really understand), and it does pulses for optical systems.  It plenty good enough.
+
+
 
 
 

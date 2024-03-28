@@ -5,19 +5,23 @@ import numpy as np        # be aware that pennylane also has its own numpy wrapp
 # setups for various quantum computers & simulators, assumes all these plugins have 
 # been installed via pip
 
-# 1) pennylane default simulator 
+# *) pennylane default simulator 
 #dev = qml.device('default.qubit', wires=2, shots=1000)
 
-# 2) pennylane lightning (fast C++ impl) simulator
-#dev = qml.device('lightning.qubit', wires=2, shots=1000)
+# *) pennylane lightning (fast C++ impl) simulator
+dev = qml.device('lightning.qubit', wires=2, shots=1000)
 
-# 3) pennylane kokkos-based simulator
+# *) pennylane lightning gpu simulator based on CUDA - results in fallback to 
+# default.qubit on unsupported hardware cuz cuda
+#dev = qml.device('lightning.gpu', wires=2, shots=1000, mpi=True)
+
+# *) pennylane kokkos-based simulator
 #dev = qml.device("lightning.kokkos", wires=2, shots=1000)
 
-# 4) AWS Braket simulator
+# *) AWS Braket simulator
 #dev = qml.device('braket.local.qubit', wires=2, shots=1000)
 
-# 5) AWS Braket cloud service - a real quantum computer!
+# *) AWS Braket cloud service - a real quantum computer!
 # set environment variables AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 #arn = "arn:aws:braket:us-east-1::device/qpu/ionq/Aria-1"  # physical quantum computer
 #s3 = ("agallojr", "arn:aws:s3:::agallojr")         # bucket to hold results
@@ -27,19 +31,19 @@ import numpy as np        # be aware that pennylane also has its own numpy wrapp
 #                 wires=2, 
 #                 shots=10)
 
-# 6) IBM aer simulator
+# *) IBM aer simulator
 #dev = qml.device('qiskit.basicaer', wires=2, shots=1000)
 
-# 7) IBM Quantum Platform - a real quantum computer!
+# *) IBM Quantum Platform - a real quantum computer!
 # set the IBMQX_TOKEN environment variable with the IBM user's token
-import os
-from qiskit_ibm_provider import IBMProvider
-IBMProvider.save_account(os.getenv('IBMQX_TOKEN'), overwrite=True)
-dev = qml.device('qiskit.ibmq', 
-                 backend="ibm_kyoto",    # one of several machines available
-                 ibmqx_token=os.getenv('IBMQX_TOKEN'),
-                 hub='ibm-q', group='open', project='main',
-                 wires=2, shots=100)
+#import os
+#from qiskit_ibm_provider import IBMProvider
+#IBMProvider.save_account(os.getenv('IBMQX_TOKEN'), overwrite=True)
+#dev = qml.device('qiskit.ibmq', 
+#                 backend="ibm_kyoto",    # one of several machines available
+#                 ibmqx_token=os.getenv('IBMQX_TOKEN'),
+#                 hub='ibm-q', group='open', project='main',
+#                 wires=2, shots=100)
 
 
 # ---------------------------------------------------------------------------

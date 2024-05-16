@@ -1,0 +1,14 @@
+
+-- Getting a quantum & CFD education --
+
+For the past several weeks we've been trying to get an education on quantum topics as well as CFD - by reading texts and other materials, consuming videos, writing coding (e.g. quantum circuits with PennyLane), and otherwise kicking tires on the tooling (e.g. OpenFOAM and ParaView).  This is in preparation for  upcoming events in these intersecting fields in 2024, CFD being a potential application of quantum.  At this stage we're not interested in quantum supremacy, we're simply interested in potential applications of the technology - build it and then make it fast.  
+
+Some events in the plan include:
+    - DARPA open house in June, topics including quantum
+    - Griffiss open house in June, focused on quantum 
+    - VKI quantum for CFD training in July 
+    - IEEE quantum week in September
+    - SC24 in November
+
+
+

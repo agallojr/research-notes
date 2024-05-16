@@ -37,3 +37,9 @@ e.g. ops : https://www.ibm.com/architectures/hybrid/genai-code-generation-ansibl
 
 Starting from some previously well-known "standard work" conducted by user populations who are hearty to this technology (e.g. an ops team), and having gained experience, the set of standard work items can be broadened and deepened, the set of users increased by the lowering of barriers / democratization.
 
+Perhaps some other use cases:
+    - summarization: of research papers, of other documents
+    - common HR use cases (e.g. what are the top employee HR tasks best to automate?)
+    - text generation: emails?
+    - demo making, instructional movies
+

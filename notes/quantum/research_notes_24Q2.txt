@@ -11,4 +11,48 @@ Some events in the plan include:
     - SC24 in November
 
 
+Running OpenFOAM in Docker:
+    docker run -it -v ./openfoam:/home/openfoam/data --rm openfoam/openfoam11-paraview510
+    blockMesh   
+    foamRun
+    (ParaView) - open "system/controlDict", select attributes and click "apply", can then play the simulation
+
+
+-- "Chat"GPTs as the new aggregator -- 
+
+Some current uses of the chat-oriented GPTs (leaving out highly specialized pattern matching applications such as algorithmic search, molecular pattern finding, etc):
+    - window dressing
+    - short parameter-driven dialogues akin to Alexa skills (e.g. "make a dinner reservation")
+    - conversation / document summarization
+    - general code & document generation assist (specific code requires specific training)
+    - domain-specific code & document generation assist (requires specific training)
+
+In the last point, the GPT becomes the new content aggregator in the organization.  Like Google, GPT starts to replace standard search.  Yet, all the same data stewardship issues remain as before.  
+
+A for-example might be the Ansys GPT - a documentation assistant trained on Ansys-curated information.  An org might want to fork that, layering it with their own domain-specific training set.  Another future feature would be the ability to save user conversational state over long duration (Ansys wipes the state on each use - at what point does the GPT become bordering on useless for the advanced user?).  The Ansys GPT is really just a document summarizer - it does not take voice commands to run Ansys simulations.
+
+
+-- The Quantum Stack -- 
+
+Where we are: 
+    - hardware technology (ions, photons, etc.) is not settled 
+    - hardware is noisy and unreliable
+    - hardware is at small scale 
+    - software stacks, for example at the gate level, make assumptions about the hardware, some of which may not be correct
+    - higher level software stacks are therefore not likely near or even on a trajectory to end state 
+    - higher order structures for programming are just starting to emerge, where they exist at all 
+    - architectures must be flexible
+    - code must be modular assuming it will be rewritten
+
+We note this is not unlike where the industry was in the 1950s with von Neumann machines.  We predict the ascent up the ladder of hardware stability and scalability and the associated programming abstractions will be much faster in this quantum iteration.
+
+
+
+
+
+
+
+
+
+
 

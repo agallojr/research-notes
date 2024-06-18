@@ -3,7 +3,7 @@ from qiskit_aer import AerSimulator
 
 print("making circuit")
 # Generate 3-qubit GHZ state
-circ = QuantumCircuit(2)
+circ = QuantumCircuit(3)
 circ.h(0)
 circ.cx(0, 1)
 circ.cx(1, 2)
@@ -12,9 +12,9 @@ circ.measure_all()
 print("making simulator")
 # Construct an ideal simulator
 aersim = AerSimulator()
-aersim.set_options()
+aersim.set_options()  # here we might set device='GPU'
 
-# Transpile for simulator
+# Transpile for simulator or specific hardware
 print("transpiling")
 circ = transpile(circ, aersim)
 

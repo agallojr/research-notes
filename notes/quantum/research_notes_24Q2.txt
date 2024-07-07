@@ -47,6 +47,36 @@ Where we are:
 We note this is not unlike where the industry was in the 1950s with von Neumann machines.  We predict the ascent up the ladder of hardware stability and scalability and the associated programming abstractions will be much faster in this quantum iteration.
 
 
+-- Quantum programming visualization --
+
+Some things we might want to see: 
+    - 2D/3D rendering of quantum circuits
+    - topology of the real computer, with active/dead qubits, proximity constraints
+    - per qubit state
+    - multi-qubit state, system state
+    - entanglement - which qubits, how entangled
+
+Some of these are static renderings, some are live in the runtime.  Much of this exists - we can draw circuits, we can draw computer topologies (the data is also needed for circuit transpilation), bloch sphere, Qiskit's QSphere for multi-qubit state and phase up to some low limit (e.g. 5 qubits).  There's not much around entanglement, not much which can deal with large circuits or larger numbers of qubits, and there's no IDE which ties all these views up with a bow.
+
+In transpilation, we take the circuit, which is itself an abstraction, and map it to the actual hardware.  Its possible (it would seem) to be able to design circuits which can't be transpiled onto a specific hardware device, or which due to large distances between qubits requiring swap gates, can't be transpiled efficiently.
+
+Decision diagrams are an interesting way to visualize the running circuit.  Branches can be shown to collapse on measurement, for example.
+
+
+-- Quantum programming - higher constructs -- 
+
+In 1950, it was bits and gates.  Its 1950 again, but that won't last long.  Seeing for example in PennyLane patterns such as "amplitude amplification".  Transpilation provides another angle on abstractions.
+
+
+-- Tutorials... --
+
+Been enjoying the PennyLane tutorials both for content and style, but given that no one ever lost their job for recommending IBM, I was using Qiskit.  The tutorials for Qiskit however are lacking - the bulk have been deprecated, the github set to read-only.  Instead we have a couple of class-length tutorials by an authored professor.  That's fine if that's your entre, but if not... so back to the PennyLane tutorials, and the use of their SDK in general.  This does not obviate Qiskit, tho their SDK has undergone breaking change, their cloud simulators deprecated, and suggestions from Big Blue that you can't do anything with simulators north of 50 qubits (50!), so you should go buy a quantum computer - so you get more qubits, and can learn to deal with an immature noisy product.  
+
+While the online Qiskit docs and tutorials are, to be nice, a "work in progress" with many gaps, the videos by John Waltrous on YouTube are excellent.  
+
+
+
+
 
 
 

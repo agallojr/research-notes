@@ -1,4 +1,4 @@
 from qiskit_ibm_runtime import QiskitRuntimeService
 
-QiskitRuntimeService.save_account(channel="ibm_quantum", token="f11174260a44d8ee0f5a474dae6c3f80e2de4e490311434e528d7943aae27bcaa8ca92b528b08f7f42b9c9ccb8afa34bb6d823b8c6124ce3520d4873ede03acd", set_as_default=True)
+QiskitRuntimeService.save_account(channel="ibm_quantum", token="", set_as_default=True)
 

@@ -1,0 +1,8 @@
+
+-- VKI Quantum for CFD -- 
+
+This is a five-day training / research seminar on the topic of applying quantum programming to CFD problems.  A report out is provided under separate file (VKI-Quantum-CFD-2024.txt).
+
+
+
+

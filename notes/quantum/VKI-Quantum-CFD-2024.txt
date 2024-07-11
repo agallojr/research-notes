@@ -1,0 +1,33 @@
+"Introduction to Quantum Computing in Fluid Dynamics" @ VKI July 8-12, 2024
+
+More a research symposium and less a training session, this 5-day event, which we attended remotely, was centered around emerging algorithms for various aspects of particular CFD applications.  These quantum algorithms tended to be not full "OpenFOAM"-like solutions, but rather point algorithms injectable into a larger heterogeneous and classical solution framework.  
+
+The work in these CFD algorithms tended to assume that someday the hardware will settle on particular winning technologies, that qubits will be plentiful, quiet and stable over long distances and timeframes, and that circuit size and complexity in end state utility CFD solution will almost certainly require automation assist for the human programmer, and a rising for the human user able the current primatives.  
+
+It is in this context that these algorithms were presented.  A small nummber of hardware vendors were on hand to tout their products.  And while vendors may be optimistic, the presenting researchers were quite clear that the state of current play means the examples are small, toy-like (e.g. 1-dimensional particle in a box, incompressible flow around simplistic geometry) well below what is needed for industry, and that it will be some time - on the order of a decade - before viable useful quantum solutions emerge.
+
+Specifically for CFD approaches, including for compressible flow, which classical mathematical model is best for implementing on quantum computers?  (Assuming no quantum-native algorithm emerges.)  Which CFD approach on quantum is most likely to scale best, have the best opportunity to achieve utility and/or supremacy?  The Nav-Stokes equations which model the flow do smooth over the details present in the LBM particle-based method, which in its idealized state contains more information.  And yet, these was significant focus on LBM as the more quantum-friendly algorithm, albiet in a greatly simplified form where inter-particle collisions are ignored.
+
+CFD topics included:
+    - Harrow–Hassidim–Lloyd algorithm for placing an observable on a solution to a linear system
+    - Quantum Fourier Transform for use in Burgers equation
+    - use of Carleman method to linearize the equations while increasing the size of the state matrix, then using quantum approaches to solving linear systems
+    - quantum circuit templates for Lattice Boltzmann and in modeling the boundary conditions
+    - quantum cellular automata in lieu of Toffoli gates; quantum walk
+
+Overall there was significant emphasis on LBM and its variations, especially certain approaches and simplifications which aid in bending LBM to quantum circuits.  Given the vary long-range and research-grade nature of the work as it exists today, there is significant time to consider if LBM is the right approach for a given app domain (e.g. compressible hot gas flow) or if current GPU-based methods based on LES and such will continue to dominate.  While LBM might achieve quantum utility before LES, LES on classical machines will still have advantage for the forseeable future. 
+
+- variational quantum eigensolver 
+- qml, qnn - barren plateaus in Hilbert space, use for classification, clustering / optimization, solving pdns & dns (e.g. avoiding divergent regions)
+- reservoir (rnn highly entangled) vs cnn 
+
+
+
+
+
+
+
+
+
+
+

@@ -75,14 +75,9 @@ Been enjoying the PennyLane tutorials both for content and style, but given that
 While the online Qiskit docs and tutorials are, to be nice, a "work in progress" with many gaps, the videos by John Waltrous on YouTube are excellent.  
 
 
+-- Griffis Q4I -- 
 
-
-
-
-
-
-
-
+I attended in late June, and a report-out is under separate file (Q4I-2024-debrief.docx).
 
 
 

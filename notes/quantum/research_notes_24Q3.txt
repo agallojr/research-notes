@@ -15,16 +15,16 @@ lecture primitives:
     Sampler - low level, return single shot measured outcomes; must be an ISA circuit, takes a tuple { (parameterized) circuit, (params), (#shots) }, 
     a so-called "pub", sampler can take more than one pub at a time, results are returned in an array 
 
-    Estimator - returns expectation balues, circuit should not include measurements, args { circuit, observables, params, precision }
+    Estimator - returns expectation values, circuit should not include measurements, args { circuit, observables, params, precision }
 
 lecture compilation: 
 
     - what is a sqrt(x) gate?
 
 
--- Impressions of Qiskit & the training --
+-- Impressions of Qiskit & the training -- 
 
-Overall the class seemed tailored at getting students familiar with Qiskit specificially - transpilation, error mitigation patterns - and less about quantum programming or information theory in general.  
+Overall the class seemed tailored at getting students familiar with Qiskit specifically - transpilation, error mitigation patterns - and less about quantum programming or information theory in general.  
 
 Qiskit itself is still somewhat immature, especially the documentation.  Code written using it tends to be formulaic and repetitive.  The 1.0 release was a breaking change - another refactor seems likely.
 

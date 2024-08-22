@@ -6,37 +6,37 @@ Background info on quantum computing and base algorithms are built up to then de
 
 Program: https://www.vki.ac.be/index.php/events-ls/events/eventdetail/579/-/introduction-to-quantum-computing-in-fluid-dynamics-sto-avt-377
 
-Slides & notes: 
+Slides & notes: (link omitted)
 
 
 -- Overview -- 
 
 More a research symposium and less a training session, this 5-day event, which we attended remotely, was centered around emerging algorithms for CFD applications.  These quantum algorithms tended to be not full "OpenFOAM"-like solutions of course, but rather point algorithms injectable into a larger heterogeneous and classical solution framework.  It is in this context that these algorithms were presented, with examples being small and toy-like (e.g. 1-dimensional particle in a box, incompressible flow around simplistic geometry)and well below what is needed for industry.  
 
-A small nummber of hardware vendors were on hand to tout their products.  And while vendors may be optimistic, the presenting researchers were quite clear that the state of current play means it will be some time - on the order of a decade - before viable useful quantum solutions emerge.
+A small number of hardware vendors were on hand to tout their products.  And while vendors may be optimistic, the presenting researchers were quite clear that the state of current play means it will be some time - on the order of a decade - before viable useful quantum solutions emerge.
 
 -- CFD -- 
 
-The work on CFD algorithms tended to assume that someday the hardware will settle on particular winning technologies, that qubits will be plentiful, quiet and stable over long distances and timeframes.  Circuit size and complexity in an end state utility CFD solution will almost certainly require automation assist for the human programmer, and a rising of the lingua for the human user  above the current primatives.  
+The work on CFD algorithms tended to assume that someday the hardware will settle on particular winning technologies, that qubits will be plentiful, quiet and stable over long distances and timeframes.  Circuit size and complexity in an end state utility CFD solution will almost certainly require automation assist for the human programmer, and a rising of the lingua for the human user  above the current primitives.  
 
-For CFD approaches, including for compressible flow, which classical mathematical model is best for implementing on quantum computers?  (Assuming no quantum-native algorithm emerges.)  Which CFD approach on quantum is most likely to scale best, have the best opportunity to achieve at least utility or even supremacy?  The Nav-Stokes equations which model flow do smooth over some details present in the Lattice Bolzmann particle-based methods.  And yet, these was significant focus on LBM as the more quantum-friendly approach, albiet at the moment in this NISQ era in a greatly simplified form where for example inter-particle collisions are ignored.
+For CFD approaches, including for compressible flow, which classical mathematical model is best for implementing on quantum computers?  (Assuming no quantum-native algorithm emerges.)  Which CFD approach on quantum is most likely to scale best, have the best opportunity to achieve at least utility or even supremacy?  The Nav-Stokes equations which model flow do smooth over some details present in the Lattice Bolzmann particle-based methods.  And yet, these was significant focus on LBM as the more quantum-friendly approach, albeit at the moment in this NISQ era in a greatly simplified form where for example inter-particle collisions are ignored.
 
 Some detailed CFD topics included:
     - Harrow–Hassidim–Lloyd algorithm for placing an observable on a solution to a linear system
     - Quantum Fourier Transform for use in Burgers equation
-    - use of Carleman method to linearize equations, increasing the size of the state matrix, then using quantum approaches to solving linear systems (e.g. variational curcuits in a quantum-classical hybrid)
+    - use of Carleman method to linearize equations, increasing the size of the state matrix, then using quantum approaches to solving linear systems (e.g. variational circuits in a quantum-classical hybrid)
     - quantum circuit templates for LBM, including modeling  boundary conditions, which could then be extended by programmatic automation 
     - quantum cellular automata in lieu of Toffoli gates; quantum walks
 
-Overall there was significant emphasis on LBM and its variations, especially certain approaches and simplifications which aid in bending LBM to quantum circuits.  Given the vary long-range and research-grade nature of the work as it exists today, there is significant time to consider if LBM is the right approach for a given domain (e.g. compressible hot gas flow) or if current GPU-based methods based on for example LES will continue to dominate, or if there are other unexplored hybrid alternatives.  While due to algorithmic adaptability LBM might achieve quantum utility before LES, LES and most if not all other approaches on classical machines will still have performance advantage for the forseeable future. 
+Overall there was significant emphasis on LBM and its variations, especially certain approaches and simplifications which aid in bending LBM to quantum circuits.  Given the very long-range and research-grade nature of the work as it exists today, there is significant time to consider if LBM is the right approach for a given domain (e.g. compressible hot gas flow) or if current GPU-based methods based on for example LES will continue to dominate, or if there are other unexplored hybrid alternatives.  While due to algorithmic adaptability LBM might achieve quantum utility before LES, LES and most if not all other approaches on classical machines will still have performance advantage for the foreseeable future. 
 
 -- Quantum Machine Learning -- 
 
 Applications of QML include solving or assisting in solving partial and full differential equations.  For example, in the large Hilbert space of quantum system states, we can avoid divergent regions or other barren plateaus.  Using techniques like parameter shift, we can build a derivative neural network / quantum circuit which can then be used to solve non-linear DEs.  QML also has potential use in classification, clustering, and optimization.
 
-Reservoir neural networks (RNNs) seems an area for futher exploration - a small number of highly entangled qubits seems to be as useful for machine learning as much larger CNNs.  Examples included training the RNN on a wave function over time and then asking it to predict future time steps.  Rayleigh-Bénard flow was modeled and the Lorenz attractor was visualized.  
+Reservoir neural networks (RNNs) seems an area for further exploration - a small number of highly entangled qubits seems to be as useful for machine learning as much larger CNNs.  Examples included training the RNN on a wave function over time and then asking it to predict future time steps.  Rayleigh-Bénard flow was modeled and the Lorenz attractor was visualized.  
  
 -- Conclusion -- 
 
-Industrial users and applied researchers will continue to watch quantum techniques for CFD to emerge, make their own determinations about application to their domain, and potential adoption once utility at scale is realized.  IT departments will continue to monitor emerging quantum-classical solutions in their domain and prepare for a union of these hardware systems over the coming decade.  Software engineers will seek opportunities to raise the programming language above current primatives and to harness automation when implementing real-world quantum CFD solutions.
+Industrial users and applied researchers will continue to watch quantum techniques for CFD to emerge, make their own determinations about application to their domain, and potential adoption once utility at scale is realized.  IT departments will continue to monitor emerging quantum-classical solutions in their domain and prepare for a union of these hardware systems over the coming decade.  Software engineers will seek opportunities to raise the programming language above current primitives and to harness automation when implementing real-world quantum CFD solutions.
 

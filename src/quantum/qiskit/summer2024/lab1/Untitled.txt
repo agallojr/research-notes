@@ -1,0 +1,10 @@
+[
+    
+    CircuitInstruction(
+        operation=Instruction(name='QFT', num_qubits=10, num_clbits=0, params=[]), 
+        qubits=(Qubit(QuantumRegister(10, 'q'), 0), Qubit(QuantumRegister(10, 'q'), 1), Qubit(QuantumRegister(10, 'q'), 2), Qubit(QuantumRegister(10, 'q'), 3), Qubit(QuantumRegister(10, 'q'), 4), Qubit(QuantumRegister(10, 'q'), 5), Qubit(QuantumRegister(10, 'q'), 6), Qubit(QuantumRegister(10, 'q'), 7), Qubit(QuantumRegister(10, 'q'), 8), Qubit(QuantumRegister(10, 'q'), 9)), 
+        
+        clbits=()
+    )
+
+]

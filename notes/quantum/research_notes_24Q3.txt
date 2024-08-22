@@ -4,5 +4,32 @@
 This is a five-day training / research seminar on the topic of applying quantum programming to CFD problems.  A report out is provided under separate file (VKI-Quantum-CFD-2024.txt).
 
 
+-- Qiskit Summer School 2024 -- 
+
+lecture basics:
+
+    It still seems like there's too much rewrite for switching between modalities of the circuit - for sampling, for estimation, on real hardware, on simulators.  Its been out a while but its still version 1.0.
+
+lecture primitives: 
+
+    Sampler - low level, return single shot measured outcomes; must be an ISA circuit, takes a tuple { (parameterized) circuit, (params), (#shots) }, 
+    a so-called "pub", sampler can take more than one pub at a time, results are returned in an array 
+
+    Estimator - returns expectation balues, circuit should not include measurements, args { circuit, observables, params, precision }
+
+lecture compilation: 
+
+    - what is a sqrt(x) gate?
+
+
+-- Impressions of Qiskit & the training --
+
+Overall the class seemed tailored at getting students familiar with Qiskit specificially - transpilation, error mitigation patterns - and less about quantum programming or information theory in general.  
+
+Qiskit itself is still somewhat immature, especially the documentation.  Code written using it tends to be formulaic and repetitive.  The 1.0 release was a breaking change - another refactor seems likely.
+
+The exercises could be run on IBMs real quantum computers in the cloud, and some of the exercises required qubit counts larger than simulatable.  Runs were initially shown to be synchronous - i.e. the script blocks while the job is in queue.  There exists a batch submission mechanism introduced in lab3, but it was throttled to 3 concurrent jobs.  In theory, 2 or more jobs could fit on the same quantum machine at the same time if the sizing permitted.  
+
+
 
 

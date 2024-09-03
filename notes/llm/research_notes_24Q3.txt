@@ -1,0 +1,20 @@
+
+-- Thoughts at the start of renewed interest --
+
+There are outlandish claims being made in public about the death of computer programming.  Some of us have seen this movie, but the points are valid.  We can see a future where the hands-on coding is less important than the conceptualizing and validation.  Where implementation language is not so important, where the implementation is inherently heterogeneous (e.g. GPU, quantum).  This might be especially true for porting projects, such as the current push to move to memory safe languages (e.g. C/C++ to Rust).  Which is better: to port to Rust, potentially introducing a set of bugs R, or using various methods of code checking to harden the existing C++ code, also introducing a set of bugs H, in both cases, assuming a set of pre-existing bugs, C.  In either case, automation, in the form of LLMs and other technologies, is needed, and is potentially line of sight.
+
+So if programming is dying, why learn any language.  If the AI assistant (AIA) is allowed to author the code in whatever language the AIA chooses, even multiple languages based on the heterogeneous solution, in what language(s) will we express the solution to the human user, in the event the human chooses to see it?  Can anything be said about universal transformation from one language to another, potentially via an intermediate format?  We see already the LLVM stack can transform at set of supported languages into an intermediary format, then compile and optimize (another AIA function) the result for the target hardware(s).  Can we hope to transform from the intermediary to an end-user form, in a manner pleasing to the human?
+
+What about the entire SE process?  How can we represent requirements - the utterances of the user on which the AIA will author the code?  How can we similarly specify test cases, as an extension of the requirements, knowing the test cases are themselves implemented as code?  
+
+Which platform is best for building the AIA?  LLM and IDE?  VS Code (or Theia which supports VS Code plugins) with a plugin like Codeium or Copilot, or Cursor as in integrated IDE and LLM?  We're using VS Code with Codeium for now.
+
+One application of VS Code with Codeium is nearer to the start of the process - authoring UML diagrams.  Static class, and perhaps use case diagrams too.  Again, which language does the human want to see?  (Even with AIA, we still write code for humans. Thank you Donald Knuth.) 
+
+
+-- Codeium & PlantUML -- 
+
+PlantUML is a markup language for specifying UML diagrams.  Codeium LLM speaks PlantUML.
+
+
+

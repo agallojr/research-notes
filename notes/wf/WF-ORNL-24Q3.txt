@@ -1,0 +1,45 @@
+
+-- Workflow Community Summit, Sept 3-4, DaSilva, Chard et al --
+
+Da Silva: 
+    - AI suggests data plane must rise to level of control plane
+    - heterogeneous in the control plane - e.g. quantum
+    - multi-site 
+    - toolchain support for portability 
+
+Haus: 
+    - data movement: inside a workflow, across-sites 
+    - provenance with AI 
+    - Git everywhere? object stores?  
+
+Ward (Argonne):
+    - interconnected labs - still seeing silos
+    - heterogeneous (AI + HPC)
+    - multi-site data movement is onerous - compression? pre-curated?
+
+Carol Goble: (in the chat)
+    - life sciences using EU ELIXIR
+    - RO-CRATES for provenance 
+
+Multi-Site Workflow breakout:
+    - CWL for workflow description
+    - Docker used, but not uniformly - need to bury that complexity
+    - domain-specific standards for exec, for data, for provenance, etc.
+    - transformations between different end user formats, some set of canonical interop formats (e.g. PSI/J for execution, CWL, etc.)
+    - metadata "standards", ways to mine metadata from unstructured data 
+
+Day Two
+    - Carol on FAIR, standing committee, writing a paper
+    - UI/UX not a lot of traction or interest
+    + heterogeneous breakout room
+        - need interfaces / standards with reference implementations
+        - interoperability via interchange of exposed end-user formats
+        - psi-j one example of an interface, for one aspect of the complete workflow system
+        - "not invented here" problem
+        - "black box" problem with error reporting, user logs, provenance,etc.
+        - composability of workflows, components within workflows - interop via metadata
+        - dimensions of heterogeneity - within job, within enterprise, across sites 
+
+
+
+

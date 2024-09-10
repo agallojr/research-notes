@@ -1,0 +1,144 @@
+
+Outline
+    + introduction, blog purpose
+    + summer school
+        + Griffiss
+            - facility, formerly AFB was there as a kid, drone corridor, photonics lab, quantum networking at the edge 
+            - ARFL & civilian 
+            - Q4I
+        + Von Karman CFD
+            - particles vs. finite volumes, etc.
+        + IBM Quantum Global Summer School
+            - topics
+            - labs
+    + AWS remarks & AI IDEs
+        - hype cycle
+        - AWS remarks
+        - my experiences, current plan (project, talk about in future blog)
+    + conclusion 
+        - summary 
+        - next steps: IDEs, IEEE quantum (my expectations), HPC-quantum heterogeneous workflows (future blog)
+
+
+* * * * * 
+Revision #1
+
+
+Five-hundred words on "what I did on my summer vacation" - a common and traditional task for a crisp autumn morning.  Writing it down helps to take stock - what *did* I do in that all-to-short summer seasons?  Hopefully enjoyed some, but worked some too, and as is typical, used the time to read or otherwise stretch the head in a different direction.  Writing it down helps to plan the next steps too, the fall campaign as it were, as the days turn shorter and colder and time at desk seemingly less burdensome on the wondering soul.
+
+If you've been tracking the technology industry, and the software space in particular, for any amount of time you've witnessed the *accelerating* rate of technical change - it was always there, but now its become impossible to miss.  An Accenture report from Davos 2024 suggests that technical rate of change is seen by C-level leaders as the number one most impactful force on their business, largely as a result of advances in various forms of "AI" tooling. [ref]  Of those surveyed, 88% see the rate of change increasing even further, and half say they're not ready, even though 70% see it as a revenue opportunity.  Today staying alive in business, including the business of software engineering, means surfing increasingly turbulent and potentially disruptive waters.  
+
+So for me, back to school.  Summer school.  
+
+I started in June at the Griffiss Institute in Rome NY at their now annual "Quantum 4 International" conference.  OK, a lot to unpack there - let me rewind.  Back to the AI topic, I'd been following the progress of various large language models (LLMs) especially in their application to software development, had used Copilot and another IDE plugin called Codeium in my work both for code and documentation, and felt I kinda sorta got the gist.  When we tried to apply the technology with some additional libraries like Langchain and apply it to some very niche development tasks, the results were meh.  About that same time came the divorces at OpenAI, the blowback from the arts community and the lawsuits and it seemed like the progress after some initial "wow" had reached a certain plateau.  Good time to pivot, as right about that time the pickup in chatter about this "quantum" stuff was becoming more noticeable, and C-level execs started asking questions about it, and for what if anything it was even remotely useful.  
+
+So I hit the stacks, read several texts on the subject of quantum computing including the K&R of quantum "Mike & Ike" and consumed mass quantities of videos from companies like IBM and Xanadu, and kicked the tires on their programming ool kits.  For those new to this topic, quantum computing / programming / information processing is a very strange and challenging hybrid of several topics STEM kids learned in college, or more likely, in their masters programs.  Calculus and especially linear algebra are key, as is a solid understanding of quantum mechanics.  This says nothing about those who are involved in all the new and diverse hardware designs and their physics requirements, nor the core science domains like chemistry which are on the cutting edge of utilizing these new hardwares - we'll stay in the world of software.  
+
+In these early stages of quantum technology, the so-called "NISQ" era (noisy, intermediate scale quantum) being comfortable with low-level gate-oriented programming is needed, as if it was 1950 again and we're in a low level world of bits and mnemonic operators.  At this intermediate stage (< 10k qubits) we're also interested in the gory details of how our information is efficiently encoded, and because of noise we have to commit qubits and logic to compensating for it.  And to be impactful, one must be able to synthesize all of these skills with a level of mathematical creativity to design novel and efficient algorithms which take advantage of the power of the quantum qubit. [ref traveling salesman in 1 qubit]
+
+So having consumed sufficient background material to recite the above book report back to you, I found myself at Griffiss in early June.  A couple words about the place - formerly the Griffiss Air Force Base, home to the B-52s and and arm of the US Strategic Air Command - the air-based leg of the nuclear deterrent triad.  I had been there many times as a kid in the early 1980s for youth sporting events, remembered seeing the bombers on the tarmac across the street from the swimming pool, remembered thinking they were cool, not really understanding.  Now Griffiss is the civilian arm of a government-industry collaboration, hosts all manner of incubators in a building owned by the county and is particularly focused on autonomous flight, operating a 50-mile flight corridor in New York State and an indoor aerodrome in Rome, the largest in the country.  Their formerly military runway can literally handle a Space Shuttle.  
+
+The other arm of the civilian-military collaboration on premise is the Air Force Research Lab, Information Directorate.  It would be typical, under the government's current mixed-use policy on technology, to fund civilian work at Griffiss, and then at a certain point take the work across the street to AFRL and work on it secretly some more.  I toured the civilian side - it was impressive enough, with particular emphasis on photonics as the quantum implementation technology (vs. for example trapped ions) and marrying quantum tech to the autonomous aviation work by demonstrating edge computing drone-based quantum entanglement for quantum networking.
+
+The conference itself...  <insert conference report out here>
+
+So where might the scientists and engineers I find myself around gain some utility, if not advantage, from adopting quantum technologies - algorithms, networking, sensing, etc.  In terms of algorithms, computational fluid dynamics (CFD) is a cornerstone of many engineering fields including aerospace.  There are many different approaches to numerically computing the behavior of a system involving moving fluids (gas, liquid) over a geometric surface, and the efficacy of any of these given methods depends on many factors, including the speed of the fluid, temperature and pressure, the complexities of the geometry, etc.  Not being a mechanical engineer, I hit the stacks, and delved into the various approaches, which helped to give some background to the terminologies and tools I had been exposed to over years working in the engineering space - finite element analysis, finite volume, large eddy simulation, and the particle-oriented Lattice Boltzmann method, which as it turns out, so say the cutting edge experts, is particularly well suited to quantum computing, that is, if we can get past the NISQ era to one with a qubit count large enough to solve real world engineering problems and not just tinker with student-grade toys.  
+
+So after some years of eddy simulation leading the way, particles are hip again.  This was my take-away from a week sitting for "Introduction to Quantum Computing in Fluid Dynamics" taught at the Von Karman Institute in Belgium, and funded by NATO.  Entirely civilian in nature, the training was aimed at CFD researchers who might take advantage of one of the quantum facilities being installed at national laboratories in the EU and US, often collocated with their existing high performance computing (HPC) clusters.  Not being a physicist, for me much of it was consumed for general domain literacy.
+
+Not so for the next segment of my summer of learning which was very hands-on.  I took two weeks and attended the IBM Global Quantum Summer School, 2024 edition, in which I am told the bar has been raised over prior years.  The course consisted of 10 lectures on a variety of topics and 4 labs.  The videos are now posted on YouTube [ref] and while I personally enjoyed the lecture on Hamiltonian simulation, there was a distinct and unfortunately necessary focus on error correction and compensating for noise, and on the inner workings of the IBM Qiskit transpiler.  In the latter case, because of the diverse nature of the emerging quantum hardware, and because inter-qubit connectivity is often not N-way, and because at this stage things break, it becomes necessary to mess with the compiler toolchain, and to adopt a toolchain with an eye to portability.  Qiskit, a library and tool set for Python, is one of a couple frameworks which currently meet this need, and the labs went to length to expose the student to the various topological mapping, translation, and optimization stages which are present in the quantum programming toolchain.  And we got to play with a Hamiltonian simulation up to 50 qubits on real hardware, as most classical machines would have a hard time managing the simultaneous behavior of 50 electron spins.
+
+During the labs, naturally I was using LLM assist in my IDE, at minimum for tedious repetitive tasks.  It was remarkable how often the AI assistant (which I'll abbreviate AIA) was helpful, even for a seemingly niche programming task using Qiskit.  
+
+<AWS remarks about programming> 
+
+I intend to delve into this topic more in a future blog and share my experiences with the various emerging AIA tools for code assist, as well as in the broader soup-to-nuts software engineering context.  
+
+In addition, expect future blog installments as my quantum education in search of industrial utility continues through the fall conference season.  As a software engineer, I'll be particularly on the lookout for frameworks, including those based on AIA, which allow the programmer to rise above the level of 1950s-like qubits and gates to higher and portable constructs.  I'll also be sharing learnings on the rise of classical-quantum hybrids, especially in HPC contexts, as today's quantum approaches using variational algorithms to converge on solutions require it.  
+
+Until next time, enjoy these last few weeks of summer as we transition to another fall campaign.
+
+- andy
+
+References:
+https://www.youtube.com/playlist?list=PLOFEBzvs-Vvr-GzDWlZpAcDpki5jUqYJu
+
+
+
+
+
+
+* * * * * 
+Revision #2
+
+Surfing the Singularity: Staying Relevant in a Time of Rapid Change 
+
+If you've been tracking the technology industry, and the software space in particular, for any amount of time you've witnessed the *accelerating* rate of technical change - it was always there, but now its become impossible to miss.  
+The rate of technological change has seemed exponential for a while now, but recent advancements in AI have pushed this curve to new heights. 
+
+An Accenture report from Davos 2024 suggests that technical rate of change is seen by C-level leaders as the number one most impactful force on their business - more than financial or geopolitical matters - largely as a result of advances in various forms of AI tooling. [1]  Of those surveyed, 88% see the rate of change increasing even further, and half say their organizations are not ready, even though 70% see it as a revenue opportunity.  
+
+** Dinosaur Developers? **  
+
+Today staying alive in business, especially the business of software engineering, means surfing increasingly turbulent and potentially disruptive waters.  Consider the leaked recent remarks of Amazon Web Services CEO Matt Garman, wherein it was suggested that a mere 2 years from now most AWS programmers wouldn't be coding. [2]  Amazon's corporate HQ in their Q2 investor call cited 4,500 *person-years* of savings on mostly mundane programming tasks like porting and hardening code with patterns of best practices. [3]  
+
+While the IMF suggests AI will impact 60% of jobs and increase wealth inequality, the jobs impacted are more likely to be skewed to higher income countries. [4]  The above remarks from influential leaders in the industry suggest that the impact will be felt most acutely among software practitioners.  Those of us who use integrated development environments (IDEs) to write code (and documents, like this one) with AI assist already are familiar with the benefits.  For those unwilling to adapt, to retool and upscale their skills, the future might be bleak.  This might mean zooming out from code to a more soup-to-nuts view of the software engineering process, especially specification and validation - the need to clearly state requirements and validate results without a direct need to focus on implementation details.  Notice that in this diagram, taken from the FAA which is increasingly interested in software engineering and model validation, traditional coding sits only at the bottom of the process rendered as a "V". [5]
+
+So how to stay relevant in a rapidly changing world, to stay one step ahead of AI and the algorithmic job reaper?  A recent LinkedIn survey of technologists suggests the number one thing a person can do is to learn new technologies. [6]
+
+A recent Gartner report [7] of the 30 most impactful technologies lists quantum computing as a weighty albeit distant critical enabler.  Why?  For starters, the existence of Shor's quantum-based numerical factoring algorithm means its a matter of when, not if, quantum computers will be used to crack existing military grade encryption.  In the hands of an adversary, especially when unknown as with the Enigma machine in WWII, the results could be catastrophic, and this is a good part of what is fueling the current government interest in quantum computing. 
+ 
+** Off to Quantum Summer School **
+
+So for me, it was back to school.  Summer school.  First I hit the stacks, brushed my very stale self up on the fundamentals of the necessary calculus and linear algebra, the quantum mechanics to at least an undergraduate level of understanding, read several texts on the subject of quantum computing including the K&R of quantum "Mike & Ike",  consumed mass quantities of videos from companies like IBM and Xanadu, and kicked the tires on their programming tool kits.  
+
+Next I traveled a short distance from my home office to the Griffiss Institute in Rome NY at their now annual "Quantum 4 International" conference which consisted of an impressive array of researchers and government administrators presenting their latest findings and laboratory results, often in a sort of national inventory of funded priority projects.  The US Air Force, which maintains a research presence in Rome NY, is particularly interested in quantum computing and networking, for example, scaling up to a larger quantum computer by networking (entangling) a set of smaller ones.  The Army and Navy are more focused on other non-computing aspects of quantum technology - sensing, magnetics, material defect identification, and as radio receivers.  The Canadian delegation was focused on many of the same research topics, as well as a national emphasis on quantum technology education - to be impactful in quantum computing, one must be able to meld a variety of math, physics, and programming skills with an unusual level of creativity to design novel and efficient algorithms which take advantage of the power of the quantum qubit - nbo small educational challenge.  Finally, researchers from the EU demonstrated new upper bounds on entanglement at a distance for wider area networking, and the use of novel estimation techniques to scale up quantum simulators in a "NISQ" era where real quantum computers are still small, noisy, fragile, and scarce.  What was noticeably lacking was the demonstration of any current industrial utility for quantum computing applications, and the head of DARPA saw none emerging until we move beyond the NISQ era. 
+
+** Pack a Remote Lunch **
+
+While some industrial domains will gain utility first, the head of DARPA suggests that utility in my own current application area - computational fluid dynamics (CFD) - will not emerge until we move into the "cryptographically relevant" era.  It was this in mind that I remotely attended the Von Karman Institute in Belgium for a week long course called "Introduction to Quantum Computing in Fluid Dynamics" funded by NATO.  Entirely civilian in nature, the training was aimed at CFD researchers who might take advantage of one of the quantum facilities being installed at national laboratories in the EU and US, often collocated with their existing high performance computing (HPC) clusters.  Not being a physicist, for me much of it was consumed for general domain literacy, and the "tl;dr" was the re-emergence of particle-based methods like Lattice Boltzmann as a focus of research over finite volume methods and solving the Navier-Stokes equations, as is currently dominant in HPC-based CFD. 
+
+With mind fully blown by the Von Karman experience, next I took two weeks and attended the IBM Global Quantum Summer School, 2024 edition, in which I am told the bar has been raised over prior years.  The course consisted of 10 lectures on a variety of topics and 4 labs.  The videos are now posted on YouTube [8] and while I personally enjoyed the lecture on Hamiltonian simulation, there was a distinct and unfortunately NISQ-era necessity to focus on error correction and compensating for noise, and on the inner workings of the IBM Qiskit transpiler.  In the latter case, because of the diverse nature of the emerging quantum hardware, because inter-qubit connectivity is often not N-way, and because at this stage things often break, it becomes common to mess with the compiler, and to adopt a toolchain with an eye to portability.  Qiskit, a library and tool set for Python, is one of a couple frameworks which currently meet this need, and the labs went to length to expose the student to the various topological mapping, translation, and optimization stages which are present in the quantum programming toolchain.  And we got to play with a Hamiltonian simulation up to 50 qubits on real hardware, as most classical machines would have a hard time managing the simultaneous behavior of 50 electron spins.
+
+** Next: AI Assistants & Hybrid Quantum Computing **
+
+During the Qiskit labs, naturally I was using LLM assist in my IDE, at minimum for tedious repetitive tasks.  But it was remarkable how often the AI assistant (which I'll furthermore abbreviate "AIA") was helpful, even for a seemingly niche programming task such as using a quantum computing framework.  I intend to delve into this topic more in a future blog and share my experiences with the various emerging AIA tools for code and document assist, as well as in the broader end-to-end software engineering context.  
+
+In addition, I intend to share future blog installments as my quantum education in search of industrial utility continues through the fall conference season.  As a software engineer, I'll be particularly on the lookout for frameworks, including those which leverage AIA, which allow the programmer to rise above the level of 1950s-like qubits and gates to higher and portable constructs.  I'll also be sharing learnings on the rise of classical-quantum hybrids, especially in HPC contexts, as today's quantum approaches such as variational algorithms which converge on solutions require it.  Here is another place where toolchains will play a major role, and where heterogeneous workflows which utilize AIA tools will likely be impactful. 
+
+Until next time, enjoy these last few weeks of summer as we transition to another fall campaign.
+
+- andy 
+
+
+References: 
+1. https://www.accenture.com/us-en/about/company/pulse-of-change
+2. https://www.businessinsider.com/aws-ceo-developers-stop-coding-ai-takes-over-2024-8
+3. 4,500 years
+4. IMF
+5. V&V
+6. LinkedIn survey 
+7. Gartner 
+8. Qiskit 2024 YouTube
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

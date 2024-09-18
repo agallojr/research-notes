@@ -12,9 +12,18 @@ Which platform is best for building the AIA?  LLM and IDE?  VS Code (or Theia wh
 One application of VS Code with Codeium is nearer to the start of the process - authoring UML diagrams.  Static class, and perhaps use case diagrams too.  Again, which language does the human want to see?  (Even with AIA, we still write code for humans. Thank you Donald Knuth.) 
 
 
--- Codeium & PlantUML -- 
+-- Codeium, PlantUML, Cursor, & the End-to-End SE Process -- 
 
 PlantUML is a markup language for specifying UML diagrams.  Codeium LLM speaks PlantUML.
+
+Some AIA can also output UML in ASCII graphics form.  
+
+I've started using Cursor as an IDE, which doesn't sit nice with Codeium - it overlaps in features and Codeium gets deactivated when porting to Cursor from VS Code.  
+
+I used Cursor to write a recent blog post.  I got the usual sentence assist, spelling, and at the end, I asked the AIA to review my work.  It told me my topics were many and listed them.  This led me to want to do a round of simplification.  I then asked the AIA again, it summarized my paper, and told me it thought it was well written (thanks!).  
+
+Plan from here is to continue to explore the use of AIA in a real software project - perhaps a refactoring, such as to lwfm.  
+
 
 
 

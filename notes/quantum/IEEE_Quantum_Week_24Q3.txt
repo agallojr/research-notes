@@ -1,1 +1,134 @@
+IEEE Quantum Week
+=================
+
+Sunday 
+    - different simulator types - state vector vs. tensor - which is better for CFD? other apps?
+    - simulators can be optimized given deep understanding of problem space
+    - e.g. QAOA sims are a discrete optimization of quantum annealing
+    - sims are reaching the limit of usefulness - a 3-way connected network of 50 qubits is not simulatable
+    - error in simulated solution can be considered noise, but simulating real environmental noise is different & hard
+    - Google presentation on QEC still very low level 
+
+
+Monday
+    - variational algorithms are not quantum native
+    - Gambetta: "1,000 qubits or your not doing quantum" (Heron is 133) <-- assume this means 1,000 virtual?
+    - CLOPS as a metric - preparation, execution, measurement; scale of qubits, quality, (connectivity), speed 
+    - applications for business in the 5 year time frame 
+    - Masako emphasizes apps which model quantum systems, such as molecular biology
+    - Qiskit is Python on Rust backend (performance to compete with cuQuantum)
+    - circuits are DAGs, but normal UI DAG tools don't scale enough 
+    - need to move from "research on quantum" to "research with quantum"
+    - Qiskit Addons framework: map, optimize, execute, analyze - Addon plugins for each step 
+    - Qiskit Functions - end-to-end workflow for specific applications, on-prem or cloud (serverless)
+    - image segmentation: N pixels can be modeled in log(N) qubits, then use min cut; shows a NP-Hard problem in n recast as a QAOA problem in log(N)
+    - IBM claims they do not publish road maps which are not achievable
+    - Calcul Quebec SC site needs future framework for all accelerator types - fatelf plus?
+    - remote gate control via entanglement 
+
+
+Tuesday
+    - sizing of qubits for utility means QEC qubits - scientific advantage at 100 qubits, 1000 for commercial
+    - Microsoft is focusing on apps for chemistry & materials science - both broadly impactful to a range of products
+    - quantum apps can scale to high accuracy, but not be faster than classical with GPU acceleration
+    - use quantum to generate data for AI 
+    - (see screen shot of classical bounded above by quantum and below by AI) - referenced by others in the conference
+    - security mitigation - use symmetric key or post-quantum public key 
+    - Feynman: the world is quantum, dammit: use quantum to simulate quantum systems 
+
+
+Wednesday
+    - Its 1950 again, too soon for hardware abstraction, but not too soon to think about it
+    - compilation: heuristics vs. optimization
+    - gate selection: expressivity vs. calibration cost; same as RISC vs. CISC
+    - Trotterization: discretization of time evolution of quantum systems; introduces algorithmic error; plus gate error
+    - co-design still possible - considering both algorithm and gate selection, argument against too-early abstraction
+    - HetArch: (see screen shot): like VLSI design, rules for scalable design; abstraction of some details, but still allows for modeling for example compute & storage on separate technologies 
+    - quantum circuit cutting is not simple like classical modularity - there can be heavy restitching cost; tools to automate by statistical analysis of circuit structure the best cut points; can be orders of magnitude faster than default Qiskit behavior; cutting is similar to AI tensor problems, and thus QC can benefit from their investments
+    - hands-on tutorial on LBM 
+    - future state in-situ workflow using CPU, GPU, QPU, user won't know 
+    - the universe computes, Heisenberg gives lower bound on time to flip a spin given an energy; delta x delta p >= h-bar / 2; delta t delta E >= h-bar / 2; blazing fast compared to classical; prepare the system then "massage the atoms to make them compute" (see Lloyd quote)
+    - simulating quantum systems is still the best application of quantum computing - in other cases we will need to "rephrase the problem"
+    - testing: how to test what is random?
+    - at this conference, so much simultaneous innovation in so many different areas; hard to hit all the talks I want to see; hard to process all the information
+    - software is research is result; current quantum software is research-driven; but reproducibility is aided by code centric work; also aided by tutorials and documentation; see the venn diagram with open source and open science; see JOSS
+    - lots of collaboration and overlap in the community, but some efforts (tech, company, etc.) won't survive and will need to pivot (if you can't beat 'em, join 'em)
+    - quantum programs will compile into multiple binaries and a workflow; LLVM is key to the pipeline; see also QIR, MLIR
+    - lack of standards in workflows (by compute platform, by scientific domain) will inhibit QC adoption 
+    - incorporating QC (and AI - how?) will change the entire stack; GPU is one example and it becomes an exception, but QC is a second example now demanding a pattern which will then enable neuromorphic, etc.  
+    - Xanadu says "too soo for standards" - will iterate (fail) fast, work together
+    
+
+
+Thursday
+
+
+
+Hiring
+    - JP Morgan Chase
+
+
+Next Steps
+    - Rustiq
+    * Qiskit Addons: MPF, SQD
+    * Qiskit Functions: circuit vs. application functions 
+    - Q-Seg image segmentation, GitHub (Supreeth Venkatesh)
+    - Rust
+    - Safe C++ - vs. Rust rewrite & retest, impedance mismatch when using language (auto-)port to Rust
+    - how to overcome such impedance mismatches in general?
+    - idea: circuit / DAG visualization tool with zoom?  other features?
+    - LinkedIn: Murali Meena @ ORNL 
+    - fatelf - extend for quantum?
+    - read IBM Quantum Decade 
+    * Majorana, can be digitally controlled (vs. analog for other qubits) - topological qubits 
+    - definition of circuit volume
+    - definition of quantum computer size, qubit stability, gate depth, gate error, cohesion / coherence time of entanglement (and/or of state(?) - what is the definition?), measurement error, connectivity, IBM report on their homepage, etc.
+    - zapata.ai
+    - Quanto - see paper 
+    - what is role of "magic state" in fault tolerant quantum computing?
+    - QEC in hardware vs. software?  how in Qiskit?
+    - Open Quantum Institute
+    - see Quantinuum roadmap for QEC qubits sizing
+    * Microsoft using "graph states" to illustrate - line, cube, etc.
+    - Google Cirq, STIM emulator, vs. others - when is a bake-off useful?
+    - read https://thequantuminsider.com/2023/12/29/quantum-computing-companies/ (& see other links in tmp/)
+    * Q-Ctrl pipeline vs. IBM - Fire Opal - input code to their pipeline, get optimized targeted code out; get reliable answers in less shots with less error due to circuit optimization / rewrite 
+    - what is FeMoco - useful for what?
+    * Qualtran
+    * student poster re: interfaces 
+    - what is difference between heuristics & optimization? (latter better for small qubit#, former for scale); take in light of my comments to Arthur 
+    * who can I collaborate with?  what is my context & skill set?
+    - read HetArch paper 
+    * Munich Quantum Toolkit 
+    * GitHub qlbm - what are their domain objects?
+    - optimizing one variable can blow up another 
+    - sparse vs. dense state vector encoding
+    - classical state vs. quantum state, translate between, both ways?
+    - QCOR
+    - QRISP
+    - MITIQ
+    - TKET
+    - JOSS
+    - QIR
+    - MLIR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

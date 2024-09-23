@@ -24,7 +24,7 @@ Monday
     - image segmentation: N pixels can be modeled in log(N) qubits, then use min cut; shows a NP-Hard problem in n recast as a QAOA problem in log(N)
     - IBM claims they do not publish road maps which are not achievable
     - Calcul Quebec SC site needs future framework for all accelerator types - fatelf plus?
-    - remote gate control via entanglement 
+    - remote gate control via entanglement
 
 
 Tuesday
@@ -59,13 +59,33 @@ Wednesday
     - Xanadu says "too soo for standards" - will iterate (fail) fast, work together
     
 
-
 Thursday
+    - IBM low level machine control takes QASM input and outputs machine controls - IBM is rewriting this part of the chain in Rust and removing the dependency on LLVM - much better performance without the "bloat" of LLVM but with a cost of portability which is not important for IBM-specific hardware drivers 
+    - today's quantum programmer has to deal with lots of low level stuff - needs RSA + SME approach 
+    - need better domain specific constructs to allow SME to speak in SME lingo 
+    - code is research, code is result 
+    - in software tech stack, need transparent layers to see and sometimes touch the layers below
+    - model can be like OpenMP: programming -> execution -> hardware; we see circuits in the top two layers; we see QEC in the bottom two layers - layers are still blurry 
+    - in Munich Quantum Toolkit, user SME can be shielded from some details for supported SME domain - specify requirements, parameters, validation cases; who builds SME domain? (the RSA), and will the abstraction be useful for new research?
+    - RSA and SME likely work in different languages, and via iterative communication converge on useful software and obtain results 
+    - Qualtran allows building of algorithms with "bloqs" of code, encapsulated functions with input and output wires; can thus reuse DAG tools; (visual programming like in LabVIEW?); wires can have data types, can explode out the abstractions if desired 
+    - in quantum it can be useful to retain information about the high level code (e.g. domain info) to be used in lower level compiler optimizations; as compared with classical where most meta info is immediately removed by the compiler; e.g. noticing we are transposing a matrix twice resulting in a no-op, versus trying to optimize doing a transpose twice; "progressive lowering" of the abstractions 
+    - Qrisp is strong typed; system function oriented; e.g. see Shor's algorithm in Qrisp; use in hybrid / variational algorithms; JISP = JAX + Qrisp 
+    - Qrisp stack uses: Qrisp -> JAX -> Catalyst -> MLIR -> LLVM / QIR -> hybrid backend 
+    - Fraunhofer not using MQT (but has pressure to do so)
+    - should we limit discussion of workflow to a specific scientific domain (at least), and then only manage the variation by compute platform?
+    - Quantum Machines approach to HPC and QC integration is to slave the QC to the HPC node / job with a fast interconnect; no workflow knowledge of the QC; currently only works with Grace Hopper  
+    - is this the opportunity for us to take CPU / GPU / QPU / NPU into a single workflow system? (LLVM-based) common compiler stack?
+    - if we can limit to a domain, can we enable LLM assist?
+    - consider Hamiltonian as a surrogate representing the design space; finding optimum by QUBO solves the design problem; DQAOA = HPC + QAOA for exploring larger multi-variate design spaces (at GE, could we demonstrate with QAOA on simulator? GE Vernova interest?)
+    - because current circuit code is small, investment in a Python layer is small and reversible
+    - (porting to Rust vs. using Safe C++ - tradeoffs) 
+    - Catalyst - running PennyLane code generates QASM which can then be optimized (even by third party - see Q-CTRL) and compiled to low level machine code; (is this model the same for Qiskit?)
+    - end state: one code, multiple binaries and a workflow  
+    - when working with a QC problem ask: at what scale, fidelity, time frame, frequency of need 
+    - Quantinuum planning new machine in 5 years... MS and Atom... what is the size of their machine?  one should still likely consider the hardware to be far off 
+    - "The pace of change has never been this fast, and it will never be this slow again" - Justin Trudeau
 
-
-
-Hiring
-    - JP Morgan Chase
 
 
 Next Steps
@@ -84,7 +104,7 @@ Next Steps
     - definition of circuit volume
     - definition of quantum computer size, qubit stability, gate depth, gate error, cohesion / coherence time of entanglement (and/or of state(?) - what is the definition?), measurement error, connectivity, IBM report on their homepage, etc.
     - zapata.ai
-    - Quanto - see paper 
+    - Quanto - see paper (vs. Inquanto?)
     - what is role of "magic state" in fault tolerant quantum computing?
     - QEC in hardware vs. software?  how in Qiskit?
     - Open Quantum Institute
@@ -94,7 +114,7 @@ Next Steps
     - read https://thequantuminsider.com/2023/12/29/quantum-computing-companies/ (& see other links in tmp/)
     * Q-Ctrl pipeline vs. IBM - Fire Opal - input code to their pipeline, get optimized targeted code out; get reliable answers in less shots with less error due to circuit optimization / rewrite 
     - what is FeMoco - useful for what?
-    * Qualtran
+    * Qualtran - visual builder
     * student poster re: interfaces 
     - what is difference between heuristics & optimization? (latter better for small qubit#, former for scale); take in light of my comments to Arthur 
     * who can I collaborate with?  what is my context & skill set?
@@ -111,6 +131,51 @@ Next Steps
     - JOSS
     - QIR
     - MLIR
+    - QASM vs. OpenQASM
+    * what open source project should I contribute to?
+    - QIR vs. MLIR - which is newer / better / supported by LLVM, etc.
+    * AutoGraph 
+    - see Catalyst vs. Qiskit pipeline
+    - Magic State Distillation 
+    - Purification 
+    - Wigner's Friend
+    - provenance of workflow sets with RO-Crate
+    * QML track via video 
+    - libensemble 
+
+
+
+* * * * * * * * 
+
+2023    Jan     Exascale Computing Project annual meeting @ Houston - presented in Workflow Community panel
+
+        May     NAFEMS Global Summit @ Tampa - presented workflow paper 
+
+        Nov     SC23 @ Denver 
+
+2024    June    Quantum 4 International @ Griffiss / AFRL 
+
+        July    Introduction to Quantum Computing for Fluid Dynamics @ Von Karman Institute - remote
+                IBM Qiskit Global Summer School - remote
+
+        Sept    Workflow Community Summit @ Oak Ridge National Lab - remote
+                IEEE Quantum Week @ Montreal 
+
+        Nov     (IBM Qiskit Dev Conference @ White Plains - on waiting list)
+                SC24 - remote
+
+2025    Feb     (Quantum Information Processing @ Raleigh - t.b.d.) 
+
+        June    Quantum 4 International @ Griffiss / AFRL
+
+        Aug     IEEE Quantum Week @ Albuquerque 
+
+        Oct     (Munich Quantum Software Forum)
+
+        Nov     SC25 @ ?
+
+
+
 
 
 

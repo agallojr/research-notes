@@ -1,0 +1,119 @@
+=================
+IEEE Quantum Week
+=================
+
+
+Next Steps
+    + videos
+        - QML track via video
+        - MS keynote 
+    + general quantum info 
+        - Magic State Distillation 
+        - Purification 
+        - Wigner's Friend
+        - sparse vs. dense state vector encoding
+        - classical state vs. quantum state, translate between, both ways?
+
+
+=========
+Takeaways
+=========
+
++ key points 
+    - "The pace of change has never been this fast, and it will never be this slow again" - Justin Trudeau
+    - the universe computes, Heisenberg gives lower bound on time to flip a spin given an energy; delta x delta p >= h-bar / 2; delta t delta E >= h-bar / 2; blazing fast compared to classical; prepare the system then "massage the atoms to make them compute" (see Lloyd quote)
+    - code is research, code is result; code aids speed and exactness of the result communication, democratization, repeatability 
+    - collaboration is key; papers have long lists of contributors; some companies and technologies will fail, humble pivots will be required; at this sub-utility level, can collaborate across domains, competitors, etc. e.g. Vernova, Healthcare 
+    - when working with a QC problem ask: at what scale, fidelity, time frame, frequency of need; quantum can provide more exact results perhaps more slowly, use to train the AI, etc. - see MS slide 
+
+
+
++ hardware
+    - Quantinuum, partnered with Microsoft, is promising a ~1000s physical qubit machine in 5 years with ~100s of logical qubits with greatly reduced gate error rates 
+    - IBM perhaps more pessimistic; suggests need is 1000s of error-corrected qubits or we're not doing useful quantum, and that's10 years off 
+    - IonQ focus on quantum for modeling quantum e.g. molecular biologics (Masako)
+    - scientific advantage at 100 QEC qubits, 1000 for commercial; error comes from many sources - algorithm, qubit, gate
+    - CLOPS as a metric - preparation, execution, measurement; scale of qubits, quality, (connectivity), speed (compare Quantinuum with IBM specs); DARPA bake-off method
+    - definition of quantum computer size, circuit volume, qubit stability, gate depth, gate error, cohesion / coherence time of entanglement (and/or of state(?) - what is the definition?), measurement error, connectivity, IBM report on their homepage, etc.
+    - usefulness of generic simulators is reaching a limit (e.g. a 3-way connected network of 50 qubits is not simulatable); different sims (state vector, tensor) and better runtime simulators can also be informed by the application domain for use in optimizations (e.g. for QAOA); simulator need will always outpace classical ability
+    - scaling up of systems by networking systems; e.g. quantum networking, remote gate control via entanglement
+    - Quantum Machines approach to HPC and QC integration is to slave the QC to the HPC node / job with a fast interconnect; no workflow knowledge of the QC; currently only works with Grace Hopper
+    - Majorana, can be digitally controlled (vs. analog for other qubits) - topological qubits - which vendor?
+
+
++ languages 
+    - Python continues to dominate with a preference for Rust on the backend (Rust as a performance memory safe language; see also Safe C++ for larger projects - process tradeoffs between new language adoption vs. port in place); what is the impedance mismatch between C++ and Rust for current LLM-based porting assist?
+    - small codebases (e.g. circuits, control software e.g. <= 25k lines) mean language investment is modest; look for maturest framework which interops: Qiskit, PennyLane, and not lesser like TKET (Quantinuum)
+    - LLVM for flexibility using intermediate compiler representations (e.g. LLVM IR, MLIR -> QIR); but not universally liked - its large, complex, the obvious cost of flexibility; high level code compiles into multiple binaries and a workflow (in-situ at least); future state in-situ workflow using CPU, GPU, QPU, user won't know which is used; GPU was an exception to the classical runtime model, now quantum offers another example to be used in a new runtime refactoring 
+    - interop permits aftermarket in optimizations - Q-Ctrl Fire Opal - input QASM  to their pipeline, get optimized targeted code out
+    - complexity requires RSA + SME approach, iterating through a transparent interface, each potentially modeling in their own fashion, else the quantum computing complexity (e.g. early state software) can get in the way of the SME; need domain-specific SME lingo (which domain makes a good first choice?)
+    - lack of workflow standards might be an inhibitor - may be able to overcome by focusing first efforts on one specific domain and adopt their workflow view / tooling 
+    - compile optimizations can benefit from domain information present in the high level code - thus "progressive lowering" of the abstractions through the compiler layers, unlike classical which strips meta info immediately; e.g. noticing we are transposing a matrix twice
+    - its 1950 again, with emphasis on qubits and gates; higher abstractions just beginning to emerge; RISC vs. CISC like debates; where does QEC live - hardware or software?
+    - abstractions should be transparent, permitting look if not also touch of the lower potentially hardware specific details; break the abstraction for a deliberate research purpose 
+    - some unfortunate lack of differentiation between some of the software providers - they will argue its too soon for standards; fortunately they interop; (e.g. transpiler pipelines which permit plugins, Python libraries with the same qubit and gate constructs, etc.)
+    + app abstractions
+        - Qiskit Addons - Functions, MPF, SQD, etc.
+        - Munich Quantum Toolkit  
+    - testing: how to test what is random?
+    + domain-agnostic higher level functions
+        - Rustiq (small set of convenience functions), Qiskit Algorithms (longer list), Qrisp (data types, arrays, means to load data into quantum systems, small set of algorithms)
+        - pick the best current framework and augment with convenience mechanisms, syntactic sugars 
+
+
++ applications  
+    - image segmentation: N binary pixels can be modeled in log(N) qubits, then use min cut; shows a NP-Hard problem in n recast as a QAOA problem in log(N)
+    - cfd with lbm 
+    - Microsoft is focusing on apps for chemistry & materials science - both broadly impactful to a range of products
+    - if the problem is not itself a quantum system we must "rephrase the problem" into e.g. a Hamiltonian, then Trotterize 
+    - variational algorithms are not quantum native
+    - consider Hamiltonian as a surrogate representing the design space; finding optimum by QUBO solves the design problem; DQAOA = HPC + QAOA for exploring larger multi-variate design spaces
+    - applications currently research-driven - need to move from "research on quantum" to "research with quantum"
+    - apps for business in the 5 year time frame, or 10?
+    - security mitigation - use symmetric key or post-quantum public key 
+    - quantum apps can scale to high accuracy, but not be faster than classical with GPU acceleration
+    - use quantum to generate data for AI 
+    - (see screen shot of classical bounded above by quantum and below by AI) - referenced by others in the conference
+    - simulators can be extended by distributing - quantum circuit cutting is not simple like classical modularity - there can be heavy restitching cost; tools to automate by statistical analysis of circuit structure the best cut points; can be orders of magnitude faster than default Qiskit behavior; cutting is similar to AI tensor problems, and thus QC can benefit from their investments
+
+
+==========
+Next Steps
+==========
+
++ tech 
+    - Rust
+
++ high level abstractions 
+    - Munich Quantum Toolkit
+    - Qiskit Addon - MPF, SQD, Functions 
+    - Qualtran - bloqs, visual programming 
+
++ potential projects 
+    - work with simulators at scale, types of sims, cutting for a medium-term plausible use case 
+    - provenance of workflow sets with RO-Crate
+    - libensemble 
+    - student poster re: interfaces 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

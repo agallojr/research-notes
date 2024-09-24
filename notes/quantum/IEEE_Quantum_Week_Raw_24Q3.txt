@@ -1,3 +1,4 @@
+=================
 IEEE Quantum Week
 =================
 
@@ -97,7 +98,6 @@ Next Steps
     - Safe C++ - vs. Rust rewrite & retest, impedance mismatch when using language (auto-)port to Rust
     - how to overcome such impedance mismatches in general?
     - idea: circuit / DAG visualization tool with zoom?  other features?
-    - LinkedIn: Murali Meena @ ORNL 
     - fatelf - extend for quantum?
     - read IBM Quantum Decade 
     * Majorana, can be digitally controlled (vs. analog for other qubits) - topological qubits 
@@ -145,7 +145,10 @@ Next Steps
 
 
 
-* * * * * * * * 
+===================
+Conference Schedule
+===================
+
 
 2023    Jan     Exascale Computing Project annual meeting @ Houston - presented in Workflow Community panel
 

@@ -1,0 +1,39 @@
+
+    
+
+Hardware & Utility Roadmap:     
+Due to the fantastic theoretical speeds of quantum computers relative to their classical counterparts and the potential to advantageously move beyond just modeling natural quantum systems, it seems worth it to keep monitoring the technology as it evolves over the next 5 years achieving scientific advantage at around 100 error-corrected qubits, through to perhaps commercial advantage in 10 years at 1,000 reliable qubits.  This is reflected in the roadmaps of the major hardware players (e.g. IBM, Quantinuum) in their solo or joint ventured efforts, although its reasonable to assume there will be technical and business winners and losers, and that perhaps in interim phases of development different hardware designs will be more useful for certain problems (e.g. annealing).  Comparative performance metrics are being defined and developed, and we've previously called out the DARPA effort to provide a bake-off.
+
+Applications: 
+Certain scientific domains will also be more amenable in these next few years - molecular biologics, quantum chemistry, material science - and we see some vendors (e.g. IonQ, Microsoft) aligning for those use cases.  We see early use of quantum algorithms for image segmentation, recasting the NP-Hard problem as a QAOA in log(N) qubits, more early use of LBM for CFD, and several cases where a problem which is not itself a quantum system being solved on a quantum computer by creative "rephrasing" of the problem (e.g. model as a Hamiltonian and Trotterize).  
+
+HPC Integration: 
+We also see the beginnings of using an HPC + QAOA approach to explore larger multi-variate design spaces.  The role of quantum computing in the enterprise portfolio of HPC was well illustrated (below) in the Microsoft keynote and amplified by others - quantum computing might be initially slower than GPU-accelerated classical computing, but can provide more exact results which might be used to train an AI which guides the GPU-accelerated algorithm.  HPC can also be used for simulators, and while the usefulness of generic simulators is reaching a limit, simulators customized for the application may extend the utility, as may algorithm-assisted circuit cut, distribute, and restitch.  
+
+        <MS screen shot> 
+
+Software as Science: 
+Towards productive science, there's the sense that the quantum tech stack is onerous, and that a SME-RSE (Subject Matter Expert and Research Software Engineer) partnership is necessary to enable the evolution from "research about quantum" to "research with quantum".  Here the SME and the RSE may potentially and iteratively express the solution in different yet equivalent and transparent manners, the SME in domain-specific and algorithmic terms, the RSE in one of several implementation-specific forms.  Code becomes research, code is reproducible result.  
+
+Implementation: 
+Python continues to dominate the front end, with Rust in the backend, enabled by LLVM-based compilers for the variety of quantum devices.  These toolchains are necessarily customizable to interoperate with specific hardware and to provide plugin algorithmic optimizations based on some early intermediate-representation standards (e.g. QASM).  We're seeing the need for compilers to retain more meta-information rather than classically strip it, and then while "progressively lowering" using that metadata to inform deeper kinds of optimizations later in the toolchain.  Small codebases at this stage means that there need be no long-term commitment to any given framework, and it seems anyway that their similarities are stronger than their differences.  End state would be domain-specific expressions for algorithms which self-compile into multiple executables automatically targeted at one of several available runtime compute types - CPU, GPU, QPU, etc. - and a workflow to orchestrate them.  While we think a focus on pure runtime performance at this stage is premature, some vendors (e.g. Quantum Machines) claim performance while dodging the larger workflow problem and tieing the quantum computer to a specific HPC node, thus removing an external scheduler.  But in the context of using QC to generate data for AI, we see that the QC need not even be on the same scheduler.
+
+Next Steps: 1) identify early adopters, 2) extend collaborator network, 3) grow multi-functional team 
+Short of basic quantum research, applications are often classical-quantum hybrids, but rather than trying to include the problems of generalized workflows into the scope of the current quantum computing work, it seems expedient for demonstration of utility to bend to the predominant workflow paradigm of a given early-adopting domain.  Collaboration is key - papers tend to have long lists of inter-enterprise collaborators - there is an understanding many current ideas won't pan out, and collegial pivots will be needed.  At this stage, researchers can obtain benefit from work in the quantum space without disclosure of confidential IP, enabling broad collaboration, and at this stage, a foundation of collaborative work is needed to compete for funding sources.  The role of the RSE is also key to the research team.  
+
+
+
+==========
+Next Steps
+==========
+
++ tech 
+    - Rust
+
++ high level abstractions 
+    - Munich Quantum Toolkit
+    - Qiskit Addon - MPF, SQD, Functions 
+    - Qualtran - bloqs, visual programming 
+    - student poster re: interfaces 
+
+

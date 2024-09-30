@@ -35,6 +35,9 @@ The exercises could be run on IBMs real quantum computers in the cloud, and some
 
 Notes are broken out into a separate file.
 
+We're close enough to the end of the month to start the 4Q notes.
+
+
 
 
 

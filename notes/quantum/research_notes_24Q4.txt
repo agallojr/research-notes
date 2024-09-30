@@ -1,0 +1,21 @@
+
+-- Higher Level Abstractions from IEEE Week --
+
+Qiskit Functions and Qiskit Addons are attempts to provide some end-to-end workflows for specific use cases.  There is also an Algorithms package in the main Qiskit library.  Qiskit circuits interop with QASM.
+
+Q-Ctrl can take a QASM circuit and optimize it.  
+
+Munich Quantum Toolkit provides some abstractions and tooling and can interop with QASM.
+
+Rustiq is a Python later on circuit generators written in Rust.  It has a small set of convenience functions.  Its unclear what the output to QASM would be, or if the conveniences are worth the effort.  
+
+Qrisp has data types, arrays, and means to load data into quantum systems, as well as a small set of algorithms.  It can output to QASM.
+
+Google Qualtran models algorithmic blocks with interconnecting wires, and provides a means to estimate runtime cost.  It can output to Cirq, and Cirq can output to QASM.
+
+Classiq also has a high-level algorithmic expression in Python, GUI tools, and an export to QASM.
+
+Two tools - qusetta and quasar from https://github.com/qcware provide a direct means to translate Qiskit to Cirq, and includes their own higher-level algorithm representation and estimator.
+
+Its completely unclear how to get Q# to interop with QASM.
+

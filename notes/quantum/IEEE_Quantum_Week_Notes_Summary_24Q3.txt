@@ -4,9 +4,11 @@ IEEE Quantum Week
 
 
 Next Steps
+    - Rust vs. Safe C++
+    - Qualtran - bloqs, visual programming - to Qiskit? QASM?
     + videos
         - QML track via video
-        - MS keynote 
+        - MS keynote slide 
     + general quantum info 
         - Magic State Distillation 
         - Purification 
@@ -75,25 +77,6 @@ Takeaways
     - use quantum to generate data for AI 
     - (see screen shot of classical bounded above by quantum and below by AI) - referenced by others in the conference
     - simulators can be extended by distributing - quantum circuit cutting is not simple like classical modularity - there can be heavy restitching cost; tools to automate by statistical analysis of circuit structure the best cut points; can be orders of magnitude faster than default Qiskit behavior; cutting is similar to AI tensor problems, and thus QC can benefit from their investments
-
-
-==========
-Next Steps
-==========
-
-+ tech 
-    - Rust
-
-+ high level abstractions 
-    - Munich Quantum Toolkit
-    - Qiskit Addon - MPF, SQD, Functions 
-    - Qualtran - bloqs, visual programming 
-
-+ potential projects 
-    - work with simulators at scale, types of sims, cutting for a medium-term plausible use case 
-    - provenance of workflow sets with RO-Crate
-    - libensemble 
-    - student poster re: interfaces 
 
 
 

@@ -24,6 +24,10 @@ I used Cursor to write a recent blog post.  I got the usual sentence assist, spe
 
 Plan from here is to continue to explore the use of AIA in a real software project - perhaps a refactoring, such as to lwfm.  
 
+I've since started using Codeium again in Cursor.  I'm still confused about which tool is better, pros/cons, what tasks to delegate to which.
+
+
+
 
 
 

@@ -1,0 +1,19 @@
+
+@startuml
+title Dog Class Diagram
+
+class Animal {
+  - name: String
+  - age: int
+  + eat()
+  + sleep()
+} left
+
+class Dog extends Animal {
+  - breed: String
+  - size: String
+  + bark()
+  + wagTail()
+} right
+
+@enduml

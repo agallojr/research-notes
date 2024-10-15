@@ -1,0 +1,95 @@
+
+-- Higher Level Abstractions from IEEE Week --
+
+Qiskit Functions and Qiskit Addons are attempts to provide some end-to-end workflows for specific use cases.  There is also an Algorithms package in the main Qiskit library.  Qiskit circuits interop with QASM.
+
+Q-Ctrl can take a QASM circuit and optimize it.  
+
+Munich Quantum Toolkit provides some abstractions and tooling and can interop with QASM.
+
+Rustiq is a Python later on circuit generators written in Rust.  It has a small set of convenience functions.  Its unclear what the output to QASM would be, or if the conveniences are worth the effort.  
+
+Qrisp has data types, arrays, and means to load data into quantum systems, as well as a small set of algorithms.  It can output to QASM.
+
+Google Qualtran models algorithmic blocks with interconnecting wires, and provides a means to estimate runtime cost.  It can output to Cirq, and Cirq can output to QASM.
+
+Classiq also has a high-level algorithmic expression in Python, GUI tools, and an export to QASM.
+
+Two tools - qusetta and quasar from https://github.com/qcware provide a direct means to translate Qiskit to Cirq, and includes their own higher-level algorithm representation and estimator.
+
+Its completely unclear how to get Q# to interop with QASM.
+
+Is quantum's big advantage the energy efficiency, even if there is no computational advantage?
+
+? What are the current mitigation strategies for gaging the impact of quantum cryptography?
+
+Quantum CFD with LBM will provided a fidelity beyond Nav-Stokes.
+
+Many optimization problems are the traveling salesman & visa versa.  Air traffic control.  Morphing into FFT is another common tactic.
+
+
+-- Qualtran --
+
+Initial thoughts: 
+    - Bloqs are low level, can map to Cirq gates.  CompositeBloqs are roll-ups of Bloqs.  It should be possible to make (or use an existing) CompositeBloq and convert it into a real Cirq circuit, and transpile it for a specific host and run it. 
+    - Cirq to Qiskit can be explored via QASM (qusetta is stale).
+    - Might we be able to use Qiskit native to define the circuit then convert it to Cirq for use in Qualtran?  How might we make Qualtran native for Qiskit?
+    - Qrisp seems somewhat similar, can import Qiskit circuits.
+    - A drawing / IDE tool for Qualtran which incorporated its analysis tools might be useful.  This sounds similar to what Classiq is doing - maybe we don't need to reinvent an IDE in today's world, but some snazzy plugins might be useful.
+    - There is a paper on arxiv to read.  
+
+The Qualtran paper states "We seek meaningful statements about the correctness or cost of a quantum algorithm, not an executable ‘binary’ for a quantum program."  
+    - Why not all the way?  Not needed for the current algorithms research, but what are the gaps to an executable if Cirq interop already exists?  
+    - What parts of a heterogeneous program - classical parts, flow control - cannot be easily represented as a Bloq?
+    
+Had a brief interaction with one of the Qualtran authors on LinkedIn and they're really focused on things which cannot be run now.  That's kind of disappointing as we're seeing multiple repositories of the same limited set of quantum algorithms.
+    - what, if anything, is not portable?
+    - what about the heterogeneity?
+
+On the question of heterogeneity, consider looking at: 
+    - OpenCL
+    - XACC
+    - Quingo 
+ -> - Qrisp (again)
+
+
+-- Qrisp --
+
+- Interop with Qiskit
+
++ where are the collections of algorithm implementations?
+    - Qrisp - python
+    - qiskit - python 
+    - cirq - python 
+    - pennylane - ... 
+    - classiq - qmod 
+    - Qualtran - qualtran, has decorations but not for execution 
+    - quantum algorihm zoo - ...?
+    - q# - 
+
+
+-- Look to the Left... -- 
+
+There is and will continue to be a shake out in the quantum companies - the technologies they employ, and the companies themselves.  We're seeing that with threats of de-listing, companies like Zapata going out of business, etc.  The industry is clear about the long time horizons, but the business realities may not give them the time.
+
+Thus from a software point of view we'd be wise to lean on companies and tech stacks which seem mature and as robust financially as possible.  Such as:
+    - IBM: Qiskit is the strongest SDK, and the most used; the hardware roadmap is plausible relative to others; the company itself has had some routine layoffs, but the size of the company is an advantage; the documentation and training materials are great
+    - Google: Cirq does a good bit of what Qiskit does, but its not as widely used and not as well documented, supported, or deep in reusable components; the company is large, and the hardware technology is competitive
+    - Xanadu: the smallest of the companies so far, the PennyLane offering is as good as the others, the transpilation pipeline similar to Qiskit, the docs are great and entertaining, but it remains to be seen if they have the investment money (from the CA govt?) to keep going long enough to be profitable.
+
+There are many hardware companies without their own leading SDK and we'll not consider them here.  There are software offerings which are not based on Python, and other than Q# we'll not consider them (e.g. Classiq).  
+
+Qrisp does not yet have sufficient reusable code to make it worth adopting right off, but its worth considering, especially given the interop with Qiskit.  It would be nice to have a standard decoration akin to Qualtran which helped to enrich the machine-readable signature of the algorithm.
+
+
+
+
+
+
+
+
+
+
+
+
+

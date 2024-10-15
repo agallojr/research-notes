@@ -80,5 +80,64 @@ Summary of Workflow Community Summit:
 
 Overall, the summit highlighted the need for standardization, interoperability, and solutions for multi-site, heterogeneous workflows in the scientific computing community.
 
+* * * * * 
+
+Notes on ORNL report
+
+Time Sensitive: benchmarks, data movement, data provenance, cross-site portable workflows
+
+AI & HPC: cross-site portable workflows, data provenance, benchmarks, workflow optimization, scaling requirements 
+
+Multi-facility: framework, multi-site requirements, site-aware planning, data cleansing, quantum sites 
+
+Heterogeneous HPC: resource framework, workflow optimization, benchmarks, AI assist
+
+UX: UX requirements, training, adaptive UX, AI assist
+
+FAIR: data provenance, benchmarks, tool requirements
+
+
+Requirements: 
+    - a multi-faceted study, prioritized, iterative, informed by the real needs of other efforts (below)
+    - ranked for end-state & near-term achievable plateaus
+    - incl: functional, performance / benchmarks, for scale-up, to be multi-site portable, to be provenancial, UX
+
+Data Provenance:
+    - based on general requirements, likely pre-existing, assess the existing leading solutions (e.g. RO-CRATE)
+    - also based on above, assess portability of approach across scientific domains 
+    - based on that, championed by the leading tool team, pilot use of approach to another scientific domain (e.g. HEP)
+    - (not in scope: reproducibility of results, preservation of execution environments, etc. - purely data metadata)
+
+Cross-Site Portable Workflows: 
+    - based on iterative general requirements, is there an existing implementation-agnostic framework?
+    - above, also including job & site resource specifications
+    - also including quantum sites 
+
+Other: 
+    - performant data movement
+    - workflow optimization & planning 
+    - data cleansing 
+    - AI assist 
+    - docs & training 
+
+
+Plan / Org: 
+    - steering group: recommends next steps across teams, seeks funding / air cover for the effort, publicizes results
+    - requirements study group: govt / industry / edu, informed & prioritized by project plans of other efforts 
+    - data provenance group: lead by leading tool team, goal to demonstrate cross-domain utility 
+    - cross-site workflows group: 
+    - other: other interest groups for other misc topics, above
+    - (could combine steering & requirements, not count other for now, so three teams)
+
+
+
+
+
+
+
+
+
+
+
 
 

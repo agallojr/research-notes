@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="227pt" height="98pt" viewBox="0.00 0.00 227.00 98.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+<title>my_graph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-94 223,-94 223,4 -4,4"/>
+<!-- ctrl_G3 -->
+<g id="node1" class="node">
+<title>ctrl_G3</title>
+<text text-anchor="middle" x="27" y="-68.3" font-family="Times,serif" font-size="14.00">ctrl</text>
+</g>
+<!-- CNOT -->
+<g id="node3" class="node">
+<title>CNOT</title>
+<polygon fill="none" stroke="black" points="91.5,-66 91.5,-83 128.5,-83 128.5,-66 91.5,-66"/>
+<text text-anchor="start" x="96" y="-72" font-family="Times,serif" font-size="10.00">CNOT</text>
+<polygon fill="none" stroke="black" points="91.5,-45 91.5,-66 128.5,-66 128.5,-45 91.5,-45"/>
+<text text-anchor="start" x="100.5" y="-51.8" font-family="Times,serif" font-size="14.00">ctrl</text>
+<polygon fill="none" stroke="black" points="91.5,-24 91.5,-45 128.5,-45 128.5,-24 91.5,-24"/>
+<text text-anchor="start" x="94.5" y="-30.8" font-family="Times,serif" font-size="14.00">target</text>
+</g>
+<!-- ctrl_G3&#45;&gt;CNOT -->
+<g id="edge1" class="edge">
+<title>ctrl_G3:e-&gt;CNOT:w</title>
+<path fill="none" stroke="black" d="M54,-72C71.22,-72 72.97,-57.23 88.98,-56.07"/>
+<ellipse fill="black" stroke="black" cx="90" cy="-56.04" rx="1" ry="1"/>
+<text text-anchor="middle" x="72.5" y="-67" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+<!-- target_G0 -->
+<g id="node2" class="node">
+<title>target_G0</title>
+<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">target</text>
+</g>
+<!-- target_G0&#45;&gt;CNOT -->
+<g id="edge2" class="edge">
+<title>target_G0:e-&gt;CNOT:w</title>
+<path fill="none" stroke="black" d="M54,-18C71.22,-18 72.97,-32.77 88.98,-33.93"/>
+<ellipse fill="black" stroke="black" cx="90" cy="-33.96" rx="1" ry="1"/>
+<text text-anchor="middle" x="72.5" y="-29" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+<!-- ctrl_G2 -->
+<g id="node4" class="node">
+<title>ctrl_G2</title>
+<text text-anchor="middle" x="192" y="-68.3" font-family="Times,serif" font-size="14.00">ctrl</text>
+</g>
+<!-- CNOT&#45;&gt;ctrl_G2 -->
+<g id="edge3" class="edge">
+<title>CNOT:e-&gt;ctrl_G2:w</title>
+<path fill="none" stroke="black" d="M128,-56C145.22,-56 146.97,-70.77 162.98,-71.93"/>
+<ellipse fill="black" stroke="black" cx="164" cy="-71.96" rx="1" ry="1"/>
+<text text-anchor="middle" x="146.5" y="-67" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+<!-- target_G5 -->
+<g id="node5" class="node">
+<title>target_G5</title>
+<text text-anchor="middle" x="192" y="-14.3" font-family="Times,serif" font-size="14.00">target</text>
+</g>
+<!-- CNOT&#45;&gt;target_G5 -->
+<g id="edge4" class="edge">
+<title>CNOT:e-&gt;target_G5:w</title>
+<path fill="none" stroke="black" d="M128,-34C145.22,-34 146.97,-19.23 162.98,-18.07"/>
+<ellipse fill="black" stroke="black" cx="164" cy="-18.04" rx="1" ry="1"/>
+<text text-anchor="middle" x="146.5" y="-29" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+</g>
+</svg>

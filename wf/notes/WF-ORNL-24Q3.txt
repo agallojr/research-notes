@@ -6,7 +6,7 @@ Da Silva:
     - heterogeneous in the control plane - e.g. quantum
     - multi-site 
     - toolchain support for portability 
-
+df
 Haus: 
     - data movement: inside a workflow, across-sites 
     - provenance with AI 
@@ -131,7 +131,7 @@ Plan / Org:
 
 
 
-
+ 
 
 
 
